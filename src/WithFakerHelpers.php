@@ -67,8 +67,6 @@ trait WithFakerHelpers
      */
     protected static function negativeNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
     {
-        if ($min < 1) $min = 1;
-        if ($max < 0) $max = PHP_INT_MAX;
         return self::negativeRandomInteger($min, $max);
     }
 
@@ -81,18 +79,6 @@ trait WithFakerHelpers
             $number = self::randomInteger($min, $max);
         } while ($number == 0);
         return $number;
-    }
-
-    /**
-     * Get a congruent integer number to $value modulo $modulus multiplied
-     * by $k.
-     */
-    protected static function getCongruentIntegerValue(int $value, int $modulus, int $k): int
-    {
-        $reminder = $value % $modulus;
-        $congruent_value = $k * $modulus + $reminder;
-        if ($congruent_value > PHP_INT_MAX || $congruent_value < PHP_INT_MIN) return $reminder;
-        return $congruent_value % $modulus;
     }
     
     /**
