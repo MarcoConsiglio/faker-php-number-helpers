@@ -1,0 +1,25 @@
+{
+    "name": "marcoconsiglio/faker-php-number-helpers",
+    "description": "\"Adds a helper trait that makes it easier to generate random numbers using FakerPHP.\"",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MarcoConsiglio\\FakerPhpNumberHelpers\\": "src/",
+            "MarcoConsiglio\\FakerPhpNumberHelpers\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco Consiglio",
+            "email": "mrccnsgl@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^13.0"
+    },
+    "require": {
+        "fakerphp/faker": "^1.24"
+    }
+}

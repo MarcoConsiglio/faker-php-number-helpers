@@ -1,0 +1,4 @@
+.phpdoc
+.phpunit.cache
+.vscode
+/vendor/
