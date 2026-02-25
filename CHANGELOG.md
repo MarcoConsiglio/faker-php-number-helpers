@@ -1,4 +1,9 @@
 # Changelog
+## v2.0.0 2026-02-25
+### Changed
+- Changed all methods and properties in `WithFakerHelpers` trait from static to non-static.
+- API documentation.
+
 ## v1.1.0 2026-02-23
 ### Changed
 - `WithFakerHelpers::{`  

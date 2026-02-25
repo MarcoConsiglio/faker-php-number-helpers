@@ -1,9 +1,9 @@
 ![GitHub License](https://img.shields.io/github/license/MarcoConsiglio/faker-php-number-helpers)
-![Static Badge](https://img.shields.io/badge/version-v1.1.0-white)
+![Static Badge](https://img.shields.io/badge/version-v2.0.0-white)
 <br>
 ![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Line%20coverage&labelColor=rgb(255%2C255%2C255))
 ![Static Badge](https://img.shields.io/badge/91%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
-![Static Badge](https://img.shields.io/badge/65%25-rgb(193%2C148%2C6)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
+![Static Badge](https://img.shields.io/badge/61%25-rgb(193%2C148%2C6)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
 
 # faker-php-number-helpers
 Adds a helper trait that makes it easier to generate random numbers using FakerPHP.
