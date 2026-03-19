@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "affbd909211064d0698796c8d7679852",
+    "content-hash": "5b10d9e216b80419e883f2fa2c0baece",
     "packages": [
         {
             "name": "fakerphp/faker",
@@ -68,6 +68,59 @@
                 "source": "https://github.com/FakerPHP/Faker/tree/v1.24.1"
             },
             "time": "2024-11-21T13:46:39+00:00"
+        },
+        {
+            "name": "nsfisis/next-after",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nsfisis/php-next-after.git",
+                "reference": "fa215815cf6f9db5c89ad6fe6153daf90fb08cf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nsfisis/php-next-after/zipball/fa215815cf6f9db5c89ad6fe6153daf90fb08cf1",
+                "reference": "fa215815cf6f9db5c89ad6fe6153daf90fb08cf1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.4"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^2.1.39",
+                "phpstan/phpstan-deprecation-rules": "^2.0.4",
+                "phpstan/phpstan-phpunit": "^2.0.16",
+                "phpstan/phpstan-strict-rules": "^2.0.10",
+                "phpunit/phpunit": "^12.5.11",
+                "symplify/easy-coding-standard": "^12.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nsfisis\\NextAfter\\": "src/",
+                    "Nsfisis\\NextAfter\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nsfisis"
+                }
+            ],
+            "description": "PHP port of java.lang.Math.nextAfter() family",
+            "homepage": "https://github.com/nsfisis/php-next-after",
+            "keywords": [
+                "float"
+            ],
+            "support": {
+                "issues": "https://github.com/nsfisis/php-next-after/issues",
+                "source": "https://github.com/nsfisis/php-next-after/tree/1.1.0"
+            },
+            "time": "2026-02-15T15:50:54+00:00"
         },
         {
             "name": "psr/container",
