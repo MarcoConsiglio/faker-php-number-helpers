@@ -1,4 +1,20 @@
 # Changelog
+## v3.0.0 2026-03-20
+### Added
+- `WithFakerHelpers::STRICT_FLOAT_MAX` constant to ensure strict `float` generation limits with a fractional part.
+### Changed
+- `WithFakerHelpers::randomInteger()` `$min` parameter default value from `0` to `PHP_INT_MIN`.
+- `WithFakerHelpers::negativeRandomInteger()` `$min` parameter default value from `1` to `PHP_INT_MIN + 1` and `$max` parameter default value from `PHP_INT_MAX` to `-1`.
+- `WithFakerHelpers::negativeNonZeroRandomInteger()` `$min` parameter default value from `1` to `PHP_INT_MIN + 1` and `$max` parameter default value from `PHP_INT_MAX` to `-1`.
+- `WithFakerHelpers::nonZeroRandomInteger()` `$min` parameter default value from `0` to `PHP_INT_MIN + 1`.
+- `WithFakerHelpers::randomFloat()` `$min` parameter default value from `0` to `-PHP_FLOAT_MAX`.
+- `WithFakerHelpers::negativeRandomFloat()` `$min` parameter default value from `0` to `-PHP_FLOAT_MAX` and `$max` parameter default value from `PHP_FLOAT_MAX` to `0`.
+- `WithFakerHelpers::randomFloatStrict()` `$min` parameter default value from `0` to `-self::STRICT_FLOAT_MAX` and `$max` parameter default value from `PHP_FLOAT_MAX` to `self::STRICT_FLOAT_MAX`.
+- `WithFakerHelpers::positiveRandomFloatStrict()` `$max` parameter default value from `PHP_FLOAT_MAX` to `self::STRICT_FLOAT_MAX`.
+- `WithFakerHelpers::negativeRandomFloatStrict()` `$min` parameter default value from `0` to `-self::STRICT_FLOAT_MAX` and `$max` parameter default value from `PHP_FLOAT_MAX` to `0`.
+- `WithFakerHelpers::negativeNonZeroRandomFloat()` `$min` parameter default value from `0` to `-PHP_FLOAT_MAX` and `$max` parameter default value from `PHP_FLOAT_MAX` to `0`.
+- `WithFakerHelpers::nonZeroRandomFloat()` `$min` parameter default value from `0` to `-PHP_FLOAT_MAX`.
+
 ## v2.0.0 2026-02-25
 ### Changed
 - Changed all methods and properties in `WithFakerHelpers` trait from static to non-static.
