@@ -46,6 +46,16 @@ Search.appendIndex(
             "summary": "Return\u0020a\u0020random\u0020relative\u0020float.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFloat"
         },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003ApositiveRandomFloat\u0028\u0029",
+            "name": "positiveRandomFloat",
+            "summary": "Return\u0020a\u0020positive\u0020random\u0020float.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloat"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003AnegativeRandomFloat\u0028\u0029",
+            "name": "negativeRandomFloat",
+            "summary": "Return\u0020a\u0020negative\u0020random\u0020float.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloat"
+        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003ArandomFloatStrict\u0028\u0029",
             "name": "randomFloatStrict",
             "summary": "Return\u0020a\u0020random\u0020relative\u0020float\u0020that\u0020is\u0020not\u0020an\u0020integer.",
@@ -61,20 +71,10 @@ Search.appendIndex(
             "summary": "Return\u0020a\u0020negative\u0020random\u0020float\u0020that\u0020is\u0020not\u0020an\u0020integer.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloatStrict"
         },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003ApositiveRandomFloat\u0028\u0029",
-            "name": "positiveRandomFloat",
-            "summary": "Return\u0020a\u0020positive\u0020random\u0020float.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloat"
-        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003ApositiveNonZeroRandomFloat\u0028\u0029",
             "name": "positiveNonZeroRandomFloat",
             "summary": "Return\u0020a\u0020positve\u0020non\u0020zero\u0020random\u0020float.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveNonZeroRandomFloat"
-        },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003AnegativeRandomFloat\u0028\u0029",
-            "name": "negativeRandomFloat",
-            "summary": "Return\u0020a\u0020negative\u0020random\u0020float.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloat"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003AnegativeNonZeroRandomFloat\u0028\u0029",
             "name": "negativeNonZeroRandomFloat",
