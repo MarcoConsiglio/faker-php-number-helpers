@@ -2,8 +2,8 @@
 ![Static Badge](https://img.shields.io/badge/version-v2.0.0-white)
 <br>
 ![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Line%20coverage&labelColor=rgb(255%2C255%2C255))
-![Static Badge](https://img.shields.io/badge/91%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
-![Static Badge](https://img.shields.io/badge/61%25-rgb(193%2C148%2C6)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
+![Static Badge](https://img.shields.io/badge/96%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
+![Static Badge](https://img.shields.io/badge/84%25-rgb(193%2C148%2C6)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
 
 # faker-php-number-helpers
 Adds a helper trait that makes it easier to generate random numbers using FakerPHP.
@@ -33,15 +33,44 @@ class MyUnitTestCase extends TestCase
 {
     use WithFakerHelpers;
 
-    ...
+    protected function setUp(): void
+    {
+        parent::setUp();
+        // Set up faker before using the methods in the trait.
+        $this->setUpFaker();
+    }
+
+    public function test_example(): void
+    {
+        // Arrange
+        $int = $this->randomInteger(); // 45465
+        $float = $this->randomFloat(); // 89354.454687684
+    }
 }
 ```
 
-## Examples
-```php
-$number_1 = $this->negativeRandomFloatStrict(min: 10.0, max: 30.0, precision: 4); // (float) -14.5346
-$number_2 = $this->nonZeroPositiveInteger(max: 10); // (int) 3
-```
+## Integer generation
+| Method | Minimum | Maximum | Excluded |
+| ---: | :---: | :---: | :---: |
+| randomInteger() | PHP_INT_MIN | PHP_INT_MAX |  |
+| positiveRandomInteger() | 0 | PHP_INT_MAX |  |
+| negativeRandomInteger() | PHP_INT_MIN + 1 | -1 | 0 |
+| nonZeroRandomInteger() | PHP_INT_MIN + 1 | PHP_INT_MAX | 0 |
+| positiveNonZeroRandomInteger() | 1 | PHP_INT_MAX | 0 |
+| negativeNonZeroRandomInteger() | PHP_INT_MIN + 1 | -1 | 0 |
+
+## Float generation
+| Method | Minimum | Maximum | Excluded |
+| ---: | :---: | :---: | :---: |
+| randomFloat() | -PHP_FLOAT_MAX | PHP_FLOAT_MAX |  |
+| positiveRandomFloat() | 0 | PHP_FLOAT_MAX |  |
+| negativeRandomFloat() | -PHP_FLOAT_MAX | 0 | 0 |
+| nonZeroRandomFloat() | -PHP_FLOAT_MAX | PHP_FLOAT_MAX | 0 |
+| positiveNonZeroRandomFloat() | 0 | PHP_FLOAT_MAX | 0 |
+| negativeNonZeroRandomFloat() | -PHP_FLOAT_MAX | 0 | 0 |
+| randomFloatStrict() | -self::STRICT_FLOAT_MAX | self::STRICT_FLOAT_MAX | integer `float`s |
+| positiveRandomFloatStrict() | 0 | self::STRICT_FLOAT_MAX | integer `float`s |
+| negativeRandomFloatStrict() | -self::STRICT_FLOAT_MAX | 0 | integer `float`s |
 
 # API Documentation
 See more in the API Documentation for more helpers at `./docs/html/index.html`.
