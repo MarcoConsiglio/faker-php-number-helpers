@@ -3,7 +3,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
-use Nsfisis\NextAfter\NextAfter;
+use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
@@ -16,6 +16,7 @@ class WithFakerHelpersTest extends TestCase
 {
     use WithFakerHelpers;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -485,7 +486,7 @@ class WithFakerHelpersTest extends TestCase
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertTrue($number != 0);
+        $this->assertNotEquals(0, $number);
     }
 
     #[TestDox("can generate a positive random float except for zero.")]
@@ -496,7 +497,7 @@ class WithFakerHelpersTest extends TestCase
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertTrue($number > 0);
+        $this->assertGreaterThan(0, $number);
     }
 
     #[TestDox("can generate a negative random float except for zero.")]
@@ -507,7 +508,7 @@ class WithFakerHelpersTest extends TestCase
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertTrue($number < 0);        
+        $this->assertLessThan(0, $number);    
     }
 
     /**
