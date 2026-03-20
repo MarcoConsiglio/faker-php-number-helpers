@@ -232,7 +232,7 @@ trait WithFakerHelpers
     /**
      * Return a negative non zero random float.
      */
-    protected function negativeNonZeroRandomFloat(float $min = 0, float $max = PHP_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
+    protected function negativeNonZeroRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = 0, $precision = PHP_FLOAT_DIG): float
     {
         do {
             $number = $this->negativeRandomFloat($min, $max, $precision);
