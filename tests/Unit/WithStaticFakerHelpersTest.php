@@ -1,20 +1,21 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
-use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
+use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
+use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
 use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
+use PHPUnit\Framework\MockObject\Stub;
 use RoundingMode;
 
 #[TestDox("The WithFakerHelpers trait")]
-#[CoversTrait(WithFakerHelpers::class)]
-class WithFakerHelpersTest extends BaseTestCase
+#[CoversTrait(WithStaticFakerHelpers::class)]
+class WithStaticFakerHelpersTest extends BaseTestCase
 {
-    use WithFakerHelpers;
+    use WithStaticFakerHelpers;
 
     #[Override]
     protected function setUp(): void
@@ -519,9 +520,10 @@ class WithFakerHelpersTest extends BaseTestCase
     {
         $builder = $this->getStubBuilder(Generator::class);
         $builder->onlyMethods([]);
+        /** @var Generator&Stub */
         $faker_stub = $builder->getStub();
         $faker_stub->method(PropertyHook::get("boolean"))->willReturn(true);
-        $this->faker = $faker_stub;
+        self::$faker = $faker_stub;
     }
 
     /**
@@ -534,6 +536,6 @@ class WithFakerHelpersTest extends BaseTestCase
         $builder->onlyMethods([]);
         $faker_stub = $builder->getStub();
         $faker_stub->method(PropertyHook::get("boolean"))->willReturn(false);
-        $this->faker = $faker_stub;
+        self::$faker = $faker_stub;
     }
 }
