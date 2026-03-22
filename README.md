@@ -1,5 +1,6 @@
 ![GitHub License](https://img.shields.io/github/license/MarcoConsiglio/faker-php-number-helpers)
-![Static Badge](https://img.shields.io/badge/version-v3.0.0-white)
+![GitHub Release](https://img.shields.io/github/v/release/MarcoConsiglio/faker-php-number-helpers)
+![Static Badge](https://img.shields.io/badge/version-v3.1.0-white)
 <br>
 ![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Line%20coverage&labelColor=rgb(255%2C255%2C255))
 ![Static Badge](https://img.shields.io/badge/96%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
