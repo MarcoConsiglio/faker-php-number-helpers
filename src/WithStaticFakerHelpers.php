@@ -6,6 +6,10 @@ use Faker\Generator;
 use Nsfisis\NextAfter\NextAfter;
 use RoundingMode;
 
+/**
+ * FakerPHP support trait that provides helper functions to easily generate 
+ * random numbers inside PHPUnit data providers.
+ */
 trait WithStaticFakerHelpers
 {
     /**
@@ -32,6 +36,9 @@ trait WithStaticFakerHelpers
             self::$faker = Factory::create(Factory::DEFAULT_LOCALE);
     }
 
+    /**
+     * Return true if `$value` is zero.
+     */
     private static function isZero(int|float $value): bool
     {
         return $value == 0;
@@ -87,7 +94,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Return a random positive integer.
+     * Return a positive random integer.
      */
     protected static function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
     {
@@ -97,7 +104,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Return a random negative integer.
+     * Return a negative random integer.
      */
     protected static function negativeRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
@@ -109,7 +116,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Return a random positive integer except for zero.
+     * Return a positive random integer except for zero.
      */
     protected static function positiveNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
     {
@@ -118,7 +125,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Return a random negative integer except for zero.
+     * Return a negative random integer except for zero.
      */
     protected static function negativeNonZeroRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
@@ -177,7 +184,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Return a random relative float that is not an integer.
+     * Return a random relative float that is not a `float` type integer.
      */
     protected static function randomFloatStrict(float $min = -self::STRICT_FLOAT_MAX, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
     {
@@ -248,6 +255,9 @@ trait WithStaticFakerHelpers
         return $number;
     }
 
+    /**
+     * Limit the `$precision` between `0` and `PHP_FLOAT_DIG`.
+     */
     private static function normalizePrecision(int $precision): int
     {
         $precision = abs($precision);
@@ -256,7 +266,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Limit an integer `$value` to `PHP_INT_MIN + 1`;
+     * If `$value` is negative limit to `PHP_INT_MIN + 1`.
      */
     private static function limitNegativeInteger(int $value): int
     {
@@ -265,7 +275,7 @@ trait WithStaticFakerHelpers
     }
 
     /**
-     * Limit the `$value` to the minimu number that can still have a fractional
+     * Limit the `$value` to the minimum number that can still have a fractional
      * part.
      */
     private static function limitNegativeStrictFloat(float $value): float
