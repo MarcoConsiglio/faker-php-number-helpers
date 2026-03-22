@@ -11,7 +11,7 @@ use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
 use PHPUnit\Framework\MockObject\Stub;
 use RoundingMode;
 
-#[TestDox("The WithFakerHelpers trait")]
+#[TestDox("The WithStaticFakerHelpers trait")]
 #[CoversTrait(WithStaticFakerHelpers::class)]
 class WithStaticFakerHelpersTest extends BaseTestCase
 {
