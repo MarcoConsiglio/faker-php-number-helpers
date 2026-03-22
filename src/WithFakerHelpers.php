@@ -158,7 +158,7 @@ trait WithFakerHelpers
         if ($this->faker->boolean)
             return $this->positiveRandomFloat(0, $max, $precision);
         else
-            return $this->negativeRandomFloat($min, 0 + NextAfter::nextDown(0), $precision);
+            return $this->negativeRandomFloat($min, NextAfter::nextDown(0), $precision);
     }
 
     /**
@@ -179,7 +179,7 @@ trait WithFakerHelpers
     {
         $precision = $this->normalizePrecision($precision);
         if ($this->isPositive($min)) $min = -1;
-        if ($this->isPositive($max)) $max = 0 + NextAfter::nextDown(0);
+        if ($this->isPositive($max)) $max = NextAfter::nextDown(0);
         return -$this->faker->randomFloat($precision, abs($max), abs($min));
     }
 
@@ -270,7 +270,7 @@ trait WithFakerHelpers
      */
     private function limitNegativeInteger(int $value): int
     {
-        if ($value == PHP_INT_MIN) return PHP_INT_MIN + 1;
+        if ($value === PHP_INT_MIN) return PHP_INT_MIN + 1;
         return $value;
     }
 

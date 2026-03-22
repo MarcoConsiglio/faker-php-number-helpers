@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+use Rector\CodeQuality\Rector\If_\CompleteMissingIfElseBracketRector;
 use Rector\Config\RectorConfig;
 
+$level = 100;
 return RectorConfig::configure()
     ->withPaths([
         __DIR__ . '/src',
@@ -11,6 +13,7 @@ return RectorConfig::configure()
     ])
     // uncomment to reach your current PHP version
     // ->withPhpSets()
-    ->withTypeCoverageLevel(0)
-    ->withDeadCodeLevel(0)
-    ->withCodeQualityLevel(0);
+    ->withTypeCoverageLevel(63)
+    ->withDeadCodeLevel(59)
+    ->withCodeQualityLevel(78)
+    ->withSkip([CompleteMissingIfElseBracketRector::class]);

@@ -23,5 +23,10 @@
     "require": {
         "fakerphp/faker": "^1.24",
         "nsfisis/next-after": "^1.1"
+    },
+    "config": {
+        "platform": {
+            "php": "^8.4"
+        }
     }
 }

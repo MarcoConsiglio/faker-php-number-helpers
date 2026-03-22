@@ -183,7 +183,7 @@ class WithFakerHelpersTest extends BaseTestCase
 
         // Assert
         $this->assertIsInt($number);
-        $this->assertTrue($number != 0);
+        $this->assertNotEquals(0, $number);
     }
 
 
@@ -221,7 +221,7 @@ class WithFakerHelpersTest extends BaseTestCase
 
         // Assert
         $this->assertIsInt($number);
-        $this->lessThanOrEqual(-1, $number);
+        $this->assertLessThanOrEqual(-1, $number);
     }
 
     #[TestDox("can generate a random float.")]
@@ -284,7 +284,7 @@ class WithFakerHelpersTest extends BaseTestCase
 
         // Assert
         $this->assertIsFloat($number);
-        $this->lessThan(0, $number);
+        $this->assertLessThan(0, $number);
     }
 
     #[TestDox("can generate a positive random float.")]

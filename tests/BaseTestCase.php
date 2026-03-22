@@ -38,6 +38,6 @@ class BaseTestCase extends TestCase
     protected function assertInRangeBothExcluded(int|float $min, int|float $max, int|float $actual): void
     {
         $this->assertGreaterThan($min, $actual);
-        $this->lessThanOrEqual($min, $actual);
+        $this->assertLessThan($max, $actual);
     }
 }

@@ -158,7 +158,7 @@ trait WithStaticFakerHelpers
         if (self::$faker->boolean)
             return self::positiveRandomFloat(0, $max, $precision);
         else
-            return self::negativeRandomFloat($min, 0 + NextAfter::nextDown(0), $precision);
+            return self::negativeRandomFloat($min, NextAfter::nextDown(0), $precision);
     }
 
     /**
@@ -179,7 +179,7 @@ trait WithStaticFakerHelpers
     {
         $precision = self::normalizePrecision($precision);
         if (self::isPositive($min)) $min = -1;
-        if (self::isPositive($max)) $max = 0 + NextAfter::nextDown(0);
+        if (self::isPositive($max)) $max = NextAfter::nextDown(0);
         return -self::$faker->randomFloat($precision, abs($max), abs($min));
     }
 
@@ -206,7 +206,7 @@ trait WithStaticFakerHelpers
         $max = self::limitPositiveStrictFloat($max);
         do {
             $number = self::positiveRandomFloat($min, $max, $precision);
-        } while ($number == round($number, 0, RoundingMode::HalfTowardsZero));
+        } while ($number === round($number, 0, RoundingMode::HalfTowardsZero));
         return $number;
     }
 
@@ -218,7 +218,7 @@ trait WithStaticFakerHelpers
         $min = self::limitNegativeStrictFloat($min);
         do {
             $number = self::negativeRandomFloat($min, $max, $precision);
-        } while ($number == round($number, 0, RoundingMode::HalfTowardsZero));
+        } while ($number === round($number, 0, RoundingMode::HalfTowardsZero));
         return $number;
     }
 
@@ -270,7 +270,7 @@ trait WithStaticFakerHelpers
      */
     private static function limitNegativeInteger(int $value): int
     {
-        if ($value == PHP_INT_MIN) return PHP_INT_MIN + 1;
+        if ($value === PHP_INT_MIN) return PHP_INT_MIN + 1;
         return $value;
     }
 
