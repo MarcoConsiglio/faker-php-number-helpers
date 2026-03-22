@@ -6,6 +6,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
 use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
 use PHPUnit\Framework\MockObject\Stub;
@@ -510,6 +511,22 @@ class WithStaticFakerHelpersTest extends BaseTestCase
         // Assert
         $this->assertIsFloat($number);
         $this->assertLessThan(0, $number);    
+    }
+
+    #[DataProvider("fakeDataProvider")]
+    #[TestDox("can be used in PHPUnit data providers.")]
+    public function test_faker_with_data_provider(int $number): void
+    {
+        // Act & Assert
+        $this->assertIsInt($number);
+    }
+
+    public static function fakeDataProvider(): array
+    {
+        self::setUpFaker();
+        return [
+            [self::randomInteger()]
+        ];
     }
 
     /**
