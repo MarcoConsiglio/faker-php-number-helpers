@@ -1,20 +1,22 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
-use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
+use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
+use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
 use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
+use PHPUnit\Framework\MockObject\Stub;
 use RoundingMode;
 
-#[TestDox("The WithFakerHelpers trait")]
-#[CoversTrait(WithFakerHelpers::class)]
-class WithFakerHelpersTest extends BaseTestCase
+#[TestDox("The WithStaticFakerHelpers trait")]
+#[CoversTrait(WithStaticFakerHelpers::class)]
+class WithStaticFakerHelpersTest extends BaseTestCase
 {
-    use WithFakerHelpers;
+    use WithStaticFakerHelpers;
 
     #[Override]
     protected function setUp(): void
@@ -511,6 +513,22 @@ class WithFakerHelpersTest extends BaseTestCase
         $this->assertLessThan(0, $number);    
     }
 
+    #[DataProvider("fakeDataProvider")]
+    #[TestDox("can be used in PHPUnit data providers.")]
+    public function test_faker_with_data_provider(int $number): void
+    {
+        // Act & Assert
+        $this->assertIsInt($number);
+    }
+
+    public static function fakeDataProvider(): array
+    {
+        self::setUpFaker();
+        return [
+            [self::randomInteger()]
+        ];
+    }
+
     /**
      * Replace the `Faker\Generator` implementetion with one that return `true`
      * every time the `$boolean` property is called.
@@ -519,9 +537,10 @@ class WithFakerHelpersTest extends BaseTestCase
     {
         $builder = $this->getStubBuilder(Generator::class);
         $builder->onlyMethods([]);
+        /** @var Generator&Stub */
         $faker_stub = $builder->getStub();
         $faker_stub->method(PropertyHook::get("boolean"))->willReturn(true);
-        $this->faker = $faker_stub;
+        self::$faker = $faker_stub;
     }
 
     /**
@@ -534,6 +553,6 @@ class WithFakerHelpersTest extends BaseTestCase
         $builder->onlyMethods([]);
         $faker_stub = $builder->getStub();
         $faker_stub->method(PropertyHook::get("boolean"))->willReturn(false);
-        $this->faker = $faker_stub;
+        self::$faker = $faker_stub;
     }
 }

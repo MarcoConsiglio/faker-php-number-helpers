@@ -7,7 +7,8 @@ use Nsfisis\NextAfter\NextAfter;
 use RoundingMode;
 
 /**
- * FakerPHP support trait.
+ * FakerPHP support trait that provides helper functions to easily generate 
+ * random numbers.
  */
 trait WithFakerHelpers
 {
@@ -35,6 +36,9 @@ trait WithFakerHelpers
             $this->faker = Factory::create(Factory::DEFAULT_LOCALE);
     }
 
+    /**
+     * Return true if `$value` is zero.
+     */
     private function isZero(int|float $value): bool
     {
         return $value == 0;
@@ -90,7 +94,7 @@ trait WithFakerHelpers
     }
 
     /**
-     * Return a random positive integer.
+     * Return a positive random integer.
      */
     protected function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
     {
@@ -100,7 +104,7 @@ trait WithFakerHelpers
     }
 
     /**
-     * Return a random negative integer.
+     * Return a negative random integer.
      */
     protected function negativeRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
@@ -112,7 +116,7 @@ trait WithFakerHelpers
     }
 
     /**
-     * Return a random positive integer except for zero.
+     * Return a positive random integer except for zero.
      */
     protected function positiveNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
     {
@@ -121,7 +125,7 @@ trait WithFakerHelpers
     }
 
     /**
-     * Return a random negative integer except for zero.
+     * Return a negative random integer except for zero.
      */
     protected function negativeNonZeroRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
@@ -154,7 +158,7 @@ trait WithFakerHelpers
         if ($this->faker->boolean)
             return $this->positiveRandomFloat(0, $max, $precision);
         else
-            return $this->negativeRandomFloat($min, 0 + NextAfter::nextDown(0), $precision);
+            return $this->negativeRandomFloat($min, NextAfter::nextDown(0), $precision);
     }
 
     /**
@@ -175,12 +179,12 @@ trait WithFakerHelpers
     {
         $precision = $this->normalizePrecision($precision);
         if ($this->isPositive($min)) $min = -1;
-        if ($this->isPositive($max)) $max = 0 + NextAfter::nextDown(0);
+        if ($this->isPositive($max)) $max = NextAfter::nextDown(0);
         return -$this->faker->randomFloat($precision, abs($max), abs($min));
     }
 
     /**
-     * Return a random relative float that is not an integer.
+     * Return a random relative float that is not a `float` type integer.
      */
     protected function randomFloatStrict(float $min = -self::STRICT_FLOAT_MAX, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
     {
@@ -251,6 +255,9 @@ trait WithFakerHelpers
         return $number;
     }
 
+    /**
+     * Limit the `$precision` between `0` and `PHP_FLOAT_DIG`.
+     */
     private function normalizePrecision(int $precision): int
     {
         $precision = abs($precision);
@@ -259,16 +266,16 @@ trait WithFakerHelpers
     }
 
     /**
-     * Limit an integer `$value` to `PHP_INT_MIN + 1`;
+     * If `$value` is negative limit to `PHP_INT_MIN + 1`.
      */
     private function limitNegativeInteger(int $value): int
     {
-        if ($value == PHP_INT_MIN) return PHP_INT_MIN + 1;
+        if ($value === PHP_INT_MIN) return PHP_INT_MIN + 1;
         return $value;
     }
 
     /**
-     * Limit the `$value` to the minimu number that can still have a fractional
+     * Limit the `$value` to the minimum number that can still have a fractional
      * part.
      */
     private function limitNegativeStrictFloat(float $value): float

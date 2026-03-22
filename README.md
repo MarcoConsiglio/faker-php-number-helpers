@@ -1,5 +1,6 @@
 ![GitHub License](https://img.shields.io/github/license/MarcoConsiglio/faker-php-number-helpers)
-![Static Badge](https://img.shields.io/badge/version-v3.0.0-white)
+![GitHub Release](https://img.shields.io/github/v/release/MarcoConsiglio/faker-php-number-helpers)
+![Static Badge](https://img.shields.io/badge/version-v3.1.0-white)
 <br>
 ![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Line%20coverage&labelColor=rgb(255%2C255%2C255))
 ![Static Badge](https://img.shields.io/badge/96%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
@@ -7,6 +8,15 @@
 
 # faker-php-number-helpers
 Adds a helper trait that makes it easier to generate random numbers using FakerPHP.
+
+# Index
+- [Installation](#installation)
+- [Usage](#usage)
+- [Available methods](#available-methods)
+  - [Integer generation](#integer-generation)
+  - [Float generation](#float-generation)
+- [API Documentation](#api-documentation)
+
 
 # Installation
 Use it as a production dependency
@@ -26,8 +36,8 @@ Add the trait to a `TestCase` class if you use this library in your tests projec
 <?php
 namespace MyCompany\Project\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
+use PHPUnit\Framework\TestCase;
 
 class MyUnitTestCase extends TestCase
 {
@@ -49,6 +59,50 @@ class MyUnitTestCase extends TestCase
 }
 ```
 
+In some tests, you'll need a PHPUnit data provider, which is a static function. In this case you can use `WithStaticFakerHelpers` trait which contain a static `Faker\Generator` property and a static `setUpFaker()` method. This trait helps you to set up a `Faker\Generator` when PHPUnit call the data provider method, which is done prior to call a `setUp` method.
+
+```php
+<?php
+namespace MyCompany\Project\Tests\Unit;
+
+use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+
+class MyUnitTestCase extends TestCase
+{
+    use WithStaticFakerHelpers;
+
+    /**
+     * This won't work as this method is called after
+     * myDataProvider().
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->setUpFaker(); // Too late!
+    }
+
+    public static function myDataProvider(): array
+    {
+        self::setUpFaker(); // Early call!
+        return [
+            [self::randomInteger()]
+        ];
+    }
+    
+    #[DataProvider("myDataProvider")]
+    public function test_something(int $number): void
+    {
+        // Act & Assert
+        $this->assertIsInt($number);
+    }
+}
+```
+
+**You cannot use `WithFakerHelpers` and `WithStaticFakerHelpers` together.**
+
+# Available methods
 ## Integer generation
 | Method | Minimum | Maximum | Excluded |
 | ---: | :---: | :---: | :---: |
@@ -73,4 +127,4 @@ class MyUnitTestCase extends TestCase
 | negativeRandomFloatStrict() | -self::STRICT_FLOAT_MAX | 0 | integer `float`s |
 
 # API Documentation
-See more in the API Documentation for more helpers at `./docs/html/index.html`.
+See more in the API Documentation at `./docs/html/index.html`.
