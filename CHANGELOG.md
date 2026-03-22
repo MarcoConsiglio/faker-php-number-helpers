@@ -1,4 +1,8 @@
 # Changelog
+## v3.1.0 2026-03-22
+### Added
+- `WithStaticFakerHelpers` trait to use FakerPHP inside static methods.
+
 ## v3.0.0 2026-03-20
 ### Added
 - `WithFakerHelpers::STRICT_FLOAT_MAX` constant to ensure strict `float` generation limits with a fractional part.
