@@ -15,5 +15,6 @@ class OnlyPositiveFractions extends Validator
             $min = FloatRange::MICRO;
             $max = FloatRange::MAX;
         }
+        $this->swap($min, $max);
     }
 }

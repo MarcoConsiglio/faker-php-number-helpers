@@ -9,6 +9,7 @@ class RelativeFraction extends Generator
 {
     public function generate(int $precision): float
     {
+        $this->validate();
         if (Validator::areBothPositive($this->range->start, $this->range->end))
             return new PositiveFraction($this->generator, $this->range)->generate($precision);
         if (Validator::areBothNegative($this->range->start, $this->range->end))

@@ -5,6 +5,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Generator as FloatGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeExceptZero as NegativeFloatExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveExceptZero as PositiveFloatExceptZero;
@@ -20,6 +21,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as Re
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloatValidator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeExceptZero as OnlyNegativeExceptZeroValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions as OnlyNegativeFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero as OnlyPositiveExceptZeroValidator;
@@ -60,12 +62,14 @@ use PHPUnit\Framework\MockObject\Stub;
 #[UsesClass(NegativeFraction::class)]
 #[UsesClass(RelativeFraction::class)]
 #[UsesClass(PositiveFloatExceptZero::class)]
+#[UsesClass(NegativeFloatExceptZero::class)]
 #[UsesClass(Validator::class)]
 #[UsesClass(IntegerValidator::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(OnlyNegativeFloatValidator::class)]
 #[UsesClass(OnlyNegativeFractionsValidator::class)]
 #[UsesClass(OnlyNegativeIntegerValidator::class)]
+#[UsesClass(OnlyNegativeExceptZeroValidator::class)]
 #[UsesClass(OnlyPositiveExceptZeroIntegerValidator::class)]
 #[UsesClass(OnlyPositiveExceptZeroValidator::class)]
 #[UsesClass(OnlyPositiveFloatValidator::class)]

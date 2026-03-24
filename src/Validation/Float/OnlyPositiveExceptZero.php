@@ -13,5 +13,6 @@ class OnlyPositiveExceptZero extends Validator
         if ($this->notAllowedFloat($max)) $max = FloatRange::MAX;
         if ($this->isNegative($max)) $max = FloatRange::MAX;
         if ($this->isZero($max)) $max = FloatRange::MAX;
+        $this->swap($min, $max);
     }
 }

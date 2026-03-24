@@ -9,5 +9,6 @@ class Relative extends Validator
     {
         if ($this->notAllowedFloat($min)) $min = FloatRange::MIN;
         if ($this->notAllowedFloat($max)) $max = FloatRange::MAX;
+        $this->swap($min, $max);
     }
 }
