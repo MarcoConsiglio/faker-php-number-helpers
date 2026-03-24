@@ -17,7 +17,7 @@ class NegativeFraction extends Generator
                 $this->range->end
             );
         } while (Validator::hasNoFraction($number));
-        return $number;
+        return -$number;
     }
 
     protected function validate(): void

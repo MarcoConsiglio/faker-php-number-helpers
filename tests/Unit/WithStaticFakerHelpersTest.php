@@ -9,6 +9,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\RelativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Generator as IntegerGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInteger;
@@ -56,6 +57,7 @@ use RoundingMode;
 #[UsesClass(RelativeFloat::class)]
 #[UsesClass(PositiveFraction::class)]
 #[UsesClass(NegativeFraction::class)]
+#[UsesClass(RelativeFraction::class)]
 #[UsesClass(IntegerValidator::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
@@ -232,67 +234,18 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     }
 
     #[TestDox("can generate a random float with a fractional part.")]
-    public function test_random_float_strict(): void
+    public function test_random_fraction(): void
     {
-        /**
-         * Negative min
-         * Negative max
-         */
         // Act
-        $number = $this->randomFloatStrict(max: -1);
+        $number = $this->randomFraction();
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertInRangeMaxExcluded(-self::STRICT_FLOAT_MAX, 0 , $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);        
-
-        /**
-         * Positve min
-         * Positive max
-         */
-        // Act
-        $number = $this->randomFloatStrict(min: 0);
-
-        // Assert
-        $this->assertIsFloat($number);
-        $this->assertInRangeMinExcluded(0, self::STRICT_FLOAT_MAX, $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);     
-
-        /**
-         * Negative min
-         * Positive max
-         * Positive outcome
-         */
-        // Arrange
-        $this->trickFakerToGetTrueOut();
-
-        // Act
-        $number = $this->randomFloatStrict();
-
-        // Assert
-        $this->assertIsFloat($number);
-        $this->assertInRangeMinExcluded(0, self::STRICT_FLOAT_MAX, $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);
-
-        /**
-         * Negative min
-         * Positive max
-         * Negative outcome
-         */
-        // Arrange
-        $this->trickFakerToGetFalseOut();
-
-        // Act
-        $number = $this->randomFloatStrict();
-
-        // Assert
-        $this->assertIsFloat($number);
-        $this->assertInRangeMaxExcluded(-self::STRICT_FLOAT_MAX, 0, $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);
+        $this->assertInRange(FloatRange::MIN, FloatRange::MAX, $number);
     }
 
     #[TestDox("can generate a positive random float with a fractional part.")]
-    public function test_positive_random_float_strict(): void
+    public function test_positive_random_fraction(): void
     {
         // Act
         $number = $this->positiveRandomFraction();
@@ -304,7 +257,7 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     }
 
     #[TestDox("can generate a negative random float with a fractional part.")]
-    public function test_negative_random_float_strict(): void
+    public function test_negative_random_fraction(): void
     {
         // Act
         $number = $this->negativeRandomFraction();

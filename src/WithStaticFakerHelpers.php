@@ -8,11 +8,13 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\RelativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveExceptZero as PositiveIntegerExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative as RelativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as RelativeIntegerExceptZero;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\RelativeFractions;
 use Nsfisis\NextAfter\NextAfter;
 use RoundingMode;
 
@@ -166,16 +168,9 @@ trait WithStaticFakerHelpers
     /**
      * Return a random relative float that is not a `float` type integer.
      */
-    protected static function randomFloatStrict(float $min = -self::STRICT_FLOAT_MAX, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
+    protected static function randomFraction(float $min = -self::STRICT_FLOAT_MAX, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
     {
-        if (self::areBothNegative($min, $max))
-            return self::negativeRandomFloatStrict($min, $max, $precision);
-        if (self::areBothPositive($min, $max))
-            return self::positiveRandomFloatStrict($min, $max, $precision);
-        if (self::$faker->boolean)
-            return self::positiveRandomFloatStrict(0, $max, $precision);
-        else
-            return self::negativeRandomFloatStrict($min, precision: $precision);
+        return new RelativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
