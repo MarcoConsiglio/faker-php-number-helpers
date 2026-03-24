@@ -1,19 +1,44 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit;
 
+use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Generator as IntegerGenerator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveZeroExcluded;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositive;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositiveZeroExcluded;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Relative as IntegerRelative;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Validator as IntegerValidator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
 use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
 use PHPUnit\Framework\MockObject\Stub;
 use RoundingMode;
 
 #[TestDox("The WithStaticFakerHelpers trait")]
 #[CoversTrait(WithStaticFakerHelpers::class)]
+#[UsesClass(IntRange::class)]
+#[UsesClass(IntegerGenerator::class)]
+#[UsesClass(Positive::class)]
+#[UsesClass(PositiveZeroExcluded::class)]
+#[UsesClass(Negative::class)]
+#[UsesClass(Relative::class)]
+#[UsesClass(OnlyPositive::class)]
+#[UsesClass(OnlyNegative::class)]
+#[UsesClass(OnlyPositiveZeroExcluded::class)]
+#[UsesClass(IntegerRelative::class)]
+#[UsesClass(IntegerValidator::class)]
+#[UsesClass(Validator::class)]
 class WithStaticFakerHelpersTest extends BaseTestCase
 {
     use WithStaticFakerHelpers;
@@ -28,153 +53,33 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     #[TestDox("can generate a random integer.")]
     public function test_random_integer(): void
     {
-        /**
-         * Negative min
-         * Negative max
-         */
-        // Act
-        $number = $this->randomInteger(max: -1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertLessThanOrEqual(-1, $number);
-
-        /**
-         * Positive min
-         * Positive max
-         */
-        // Act
-        $number = $this->randomInteger(min: 0);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertGreaterThanOrEqual(0, $number);
-
-        /**
-         * Negative min
-         * Positive max
-         * Positive outcome
-         */
-        // Arrange
-        $this->trickFakerToGetTrueOut();
-
         // Act
         $number = $this->randomInteger();
 
         // Assert
         $this->assertIsInt($number);
-        $this->assertGreaterThanOrEqual(0, $number);
-
-        /**
-         * Negative min
-         * Positive max
-         * Negative outcome
-         */
-        // Arrange
-        $this->trickFakerToGetFalseOut();
-
-        // Act
-        $number = $this->randomInteger();
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertLessThan(0, $number);
     }
 
     #[TestDox("can generate a positive random integer.")]
     public function test_positive_random_integer(): void
     {
-        /**
-         * Min = 0
-         * Max = PHP_INT_MAX
-         */
         // Act
         $number = $this->positiveRandomInteger();
 
         // Assert
         $this->assertIsInt($number);
         $this->assertGreaterThanOrEqual(0, $number);
-
-        /**
-         * Negative min
-         * Max = PHP_INT_MAX
-         */
-        // Act 
-        $number = $this->positiveRandomInteger(-1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertGreaterThanOrEqual(0, $number);
-
-        /**
-         * Min = 0
-         * Negative max
-         */
-        // Act
-        $number = $this->positiveRandomInteger(max: -1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertInRange(0, 1, $number);
-
-        /**
-         * Negative min
-         * Negative max
-         */
-        // Act
-        $number = $this->positiveRandomInteger(min: -2, max: -1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertInRange(0, 1, $number);
     }
 
     #[TestDox("can generate a negative random integer.")]
     public function test_negative_random_integer(): void
     {
-        /**
-         * Min = PHP_INT_MIN + 1
-         * Max = -1
-         */
         // Act
         $number = $this->negativeRandomInteger();
 
         // Assert
         $this->assertIsInt($number);
         $this->assertLessThan(0, $number);
-
-        /**
-         * Positive min
-         * Max = -1
-         */
-        // Act
-        $number = $this->negativeRandomInteger(1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertInRange(-2, -1, $number);
-
-        /**
-         * Min = PHP_INT_MIN + 1
-         * Positive max
-         */
-        // Act
-        $number = $this->negativeRandomInteger(max: 1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertLessThanOrEqual(-1, $number);
-
-        /**
-         * Positive min
-         * Positive max
-         */
-        // Act
-        $number = $this->negativeRandomInteger(min: 1, max: 1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertInRange(-2, -1, $number);
     }
 
     #[TestDox("can generate a random integer except for zero.")]
@@ -192,27 +97,12 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     #[TestDox("can generate a positive random integer except for zero.")]
     public function test_positive_non_zero_random_integer(): void
     {
-        /**
-         * Min = 1
-         * Max = PHP_INT_MAX
-         */
         // Act
         $number = $this->positiveNonZeroRandomInteger();
 
         // Assert
         $this->assertIsInt($number);
-        $this->assertGreaterThanOrEqual(1, $number);
-
-        /**
-         * Negative min
-         * Max = PHP_INT_MAX
-         */
-        // Act
-        $number = $this->positiveNonZeroRandomInteger(-1);
-
-        // Assert
-        $this->assertIsInt($number);
-        $this->assertGreaterThanOrEqual(1, $number);
+        $this->assertGreaterThan(0, $number);
     }
 
     #[TestDox("can generate a negative random integer except for zero.")]

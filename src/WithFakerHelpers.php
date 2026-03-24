@@ -3,6 +3,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 
 use Faker\Factory;
 use Faker\Generator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive;
 use Nsfisis\NextAfter\NextAfter;
 use RoundingMode;
 
@@ -98,9 +99,7 @@ trait WithFakerHelpers
      */
     protected function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
     {
-        if ($this->isNegative($min)) $min = 0;
-        if ($this->isNegative($max)) $max = $min + 1;
-        return $this->faker->numberBetween($min, $max);
+        return new Positive(self::$faker, new IntRange($min, $max))->generate();
     }
 
     /**

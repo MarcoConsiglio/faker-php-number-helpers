@@ -3,6 +3,10 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 
 use Faker\Factory;
 use Faker\Generator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveZeroExcluded;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative;
 use Nsfisis\NextAfter\NextAfter;
 use RoundingMode;
 
@@ -83,14 +87,7 @@ trait WithStaticFakerHelpers
      */
     protected static function randomInteger(int $min = PHP_INT_MIN, int $max = PHP_INT_MAX): int
     {
-        if (self::areBothNegative($min, $max))
-            return self::negativeRandomInteger($min, $max);
-        if (self::areBothPositive($min, $max))
-            return self::positiveRandomInteger($min, $max);
-        if (self::$faker->boolean)
-            return self::positiveRandomInteger(0, $max);
-        else
-            return self::negativeRandomInteger($min, -1);
+        return new Relative(self::$faker, new IntRange($min, $max))->generate();
     }
 
     /**
@@ -98,9 +95,7 @@ trait WithStaticFakerHelpers
      */
     protected static function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
     {
-        if (self::isNegative($min)) $min = 0;
-        if (self::isNegative($max)) $max = $min + 1;
-        return self::$faker->numberBetween($min, $max);
+        return new Positive(self::$faker, new IntRange($min, $max))->generate();
     }
 
     /**
@@ -108,11 +103,7 @@ trait WithStaticFakerHelpers
      */
     protected static function negativeRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
-        $min = self::limitNegativeInteger($min);
-        $max = self::limitNegativeInteger($max);
-        if (self::isPositive($min)) $min = -2;
-        if (self::isPositive($max)) $max = -1;
-        return -self::$faker->numberBetween(abs($max), abs($min));
+        return new Negative(self::$faker, new IntRange($min, $max))->generate();
     }
 
     /**
@@ -120,8 +111,7 @@ trait WithStaticFakerHelpers
      */
     protected static function positiveNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
     {
-        if ($min < 1) $min = 1;
-        return self::positiveRandomInteger($min, $max);
+        return new PositiveZeroExcluded(self::$faker, new IntRange($min, $max))->generate();
     }
 
     /**
