@@ -4,6 +4,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 use Faker\Factory;
 use Faker\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
@@ -188,13 +189,9 @@ trait WithStaticFakerHelpers
     /**
      * Return a negative random float that is not an integer.
      */
-    protected static function negativeRandomFloatStrict(float $min = -self::STRICT_FLOAT_MAX, float $max = 0, $precision = PHP_FLOAT_DIG): float
+    protected static function negativeRandomFraction(float $min = -self::STRICT_FLOAT_MAX, float $max = 0, $precision = PHP_FLOAT_DIG): float
     {
-        $min = self::limitNegativeStrictFloat($min);
-        do {
-            $number = self::negativeRandomFloat($min, $max, $precision);
-        } while ($number === round($number, 0, RoundingMode::HalfTowardsZero));
-        return $number;
+        return new NegativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**

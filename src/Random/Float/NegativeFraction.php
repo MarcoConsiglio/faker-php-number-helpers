@@ -1,10 +1,10 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
-class PositiveFraction extends Generator
+class NegativeFraction extends Generator
 {
     public function generate(int $precision): float
     {
@@ -22,6 +22,6 @@ class PositiveFraction extends Generator
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositiveFractions);
+        $this->range->validate(new OnlyNegativeFractions);
     }
 }

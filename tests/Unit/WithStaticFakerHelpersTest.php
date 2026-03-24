@@ -5,6 +5,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Generator as FloatGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
@@ -17,6 +18,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as Re
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloatValidator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions as OnlyNegativeFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions as OnlyPositiveFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Relative as RelativeFloatValidator;
@@ -53,6 +55,7 @@ use RoundingMode;
 #[UsesClass(NegativeFloat::class)]
 #[UsesClass(RelativeFloat::class)]
 #[UsesClass(PositiveFraction::class)]
+#[UsesClass(NegativeFraction::class)]
 #[UsesClass(IntegerValidator::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
@@ -64,6 +67,7 @@ use RoundingMode;
 #[UsesClass(RelativeExceptZeroIntegerValidator::class)]
 #[UsesClass(OnlyNegativeFloatValidator::class)]
 #[UsesClass(OnlyPositiveFractionsValidator::class)]
+#[UsesClass(OnlyNegativeFractionsValidator::class)]
 #[UsesClass(RelativeFloatValidator::class)]
 class WithStaticFakerHelpersTest extends BaseTestCase
 {
@@ -303,12 +307,12 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     public function test_negative_random_float_strict(): void
     {
         // Act
-        $number = $this->negativeRandomFloatStrict();
+        $number = $this->negativeRandomFraction();
 
         // Assert
         $this->assertIsFloat($number);
         $this->assertLessThan(0, $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);
+        $this->assertIsFraction($number);
     }
 
     #[TestDox("can generate a random float except for zero.")]
