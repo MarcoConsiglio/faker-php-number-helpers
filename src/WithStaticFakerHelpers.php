@@ -3,6 +3,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 
 use Faker\Factory;
 use Faker\Generator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInteger;
@@ -163,10 +164,7 @@ trait WithStaticFakerHelpers
      */
     protected static function negativeRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = 0, int $precision = PHP_FLOAT_DIG): float
     {
-        $precision = self::normalizePrecision($precision);
-        if (self::isPositive($min)) $min = -1;
-        if (self::isPositive($max)) $max = NextAfter::nextDown(0);
-        return -self::$faker->randomFloat($precision, abs($max), abs($min));
+        return new NegativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**

@@ -8,9 +8,8 @@ class Positive extends Generator
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
-        $this->normalizePrecision($precision);
         return $this->generator->randomFloat(
-            $precision, 
+            $this->normalizePrecision($precision), 
             $this->range->start, 
             $this->range->end)
         ;

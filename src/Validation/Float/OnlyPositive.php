@@ -7,7 +7,9 @@ class OnlyPositive extends Validator
 {
     public function validate(float &$min, float &$max): void
     {
+        if ($this->notAllowedFloat($min)) $min = 0.0;
         if ($this->isNegative($min)) $min = 0.0;
+        if ($this->notAllowedFloat($max)) $max = FloatRange::MAX;
         if ($this->isNegative($max)) $max = FloatRange::MAX;
         $this->swap($min, $max);
     }

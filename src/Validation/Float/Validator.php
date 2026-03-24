@@ -13,4 +13,9 @@ abstract class Validator extends AbstractValidator implements Strategy
             $min = $temp;
         }
     }
+
+    protected function notAllowedFloat(float $value): bool
+    {
+        return is_infinite($value) || is_nan($value);
+    }
 }
