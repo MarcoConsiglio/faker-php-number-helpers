@@ -7,6 +7,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Generator as FloatGenerato
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveExceptZero as PositiveFloatExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\RelativeFraction;
@@ -21,6 +22,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions as OnlyNegativeFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloatValidator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero as OnlyPositiveExceptZeroValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions as OnlyPositiveFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Relative as RelativeFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
@@ -39,7 +41,6 @@ use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
 use PHPUnit\Framework\MockObject\Stub;
-use RoundingMode;
 
 #[TestDox("The WithStaticFakerHelpers trait")]
 #[CoversTrait(WithStaticFakerHelpers::class)]
@@ -58,19 +59,21 @@ use RoundingMode;
 #[UsesClass(PositiveFraction::class)]
 #[UsesClass(NegativeFraction::class)]
 #[UsesClass(RelativeFraction::class)]
+#[UsesClass(PositiveFloatExceptZero::class)]
+#[UsesClass(Validator::class)]
 #[UsesClass(IntegerValidator::class)]
 #[UsesClass(FloatValidator::class)]
-#[UsesClass(Validator::class)]
-#[UsesClass(OnlyPositiveIntegerValidator::class)]
-#[UsesClass(OnlyPositiveExceptZeroIntegerValidator::class)]
-#[UsesClass(OnlyNegativeIntegerValidator::class)]
-#[UsesClass(OnlyPositiveFloatValidator::class)]
-#[UsesClass(RelativeIntegerValidator::class)]
-#[UsesClass(RelativeExceptZeroIntegerValidator::class)]
 #[UsesClass(OnlyNegativeFloatValidator::class)]
-#[UsesClass(OnlyPositiveFractionsValidator::class)]
 #[UsesClass(OnlyNegativeFractionsValidator::class)]
+#[UsesClass(OnlyNegativeIntegerValidator::class)]
+#[UsesClass(OnlyPositiveExceptZeroIntegerValidator::class)]
+#[UsesClass(OnlyPositiveExceptZeroValidator::class)]
+#[UsesClass(OnlyPositiveFloatValidator::class)]
+#[UsesClass(OnlyPositiveFractionsValidator::class)]
+#[UsesClass(OnlyPositiveIntegerValidator::class)]
+#[UsesClass(RelativeExceptZeroIntegerValidator::class)]
 #[UsesClass(RelativeFloatValidator::class)]
+#[UsesClass(RelativeIntegerValidator::class)]
 class WithStaticFakerHelpersTest extends BaseTestCase
 {
     use WithStaticFakerHelpers;
