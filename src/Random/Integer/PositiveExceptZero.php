@@ -1,9 +1,10 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer;
 
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositiveExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositiveZeroExcluded;
 
-class PositiveZeroExcluded extends Generator
+class PositiveExceptZero extends Generator
 {
     public function generate(): int
     {
@@ -16,6 +17,6 @@ class PositiveZeroExcluded extends Generator
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositiveZeroExcluded);
+        $this->range->validate(new OnlyPositiveExceptZero);
     }
 }

@@ -1,14 +1,13 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
-
-class Relative extends Validator
+class RelativeExceptZero extends Validator
 {
     public function validate(int &$min, int &$max): void
     {
         $this->avoidIntMin($min);
         $this->avoidIntMin($max);
-        $this->swap($min, $max);
+        if ($this->isZero($min)) $min = -1;
+        if ($this->isZero($max)) $max = 1;
     }
 }

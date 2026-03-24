@@ -16,7 +16,7 @@ class IntRange
     /**
      * The minimum number allowed.
      */
-    public const int MIN = PHP_INT_MIN;
+    public const int MIN = PHP_INT_MIN + 1;
 
     /**
      * Construct an `IntRange`.

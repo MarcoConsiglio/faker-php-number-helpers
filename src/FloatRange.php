@@ -1,12 +1,12 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Strategy as ValidationStrategy;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 
 /**
  * A decimal Range.
  */
-class FloatRange extends Range
+class FloatRange
 {
     /**
      * The maximum number allowed.
@@ -42,7 +42,7 @@ class FloatRange extends Range
         public protected(set) float $end
     ) {}
 
-    public function validate(ValidationStrategy $validator): void
+    public function validate(FloatValidator $validator): void
     {
         $validator->validate($this->start, $this->end);
     }

@@ -1,6 +1,7 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
+use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator as AbstractValidator;
 
 abstract class Validator extends AbstractValidator implements Strategy
@@ -12,5 +13,10 @@ abstract class Validator extends AbstractValidator implements Strategy
             $max = $min;
             $min = $temp;
         }
+    }
+
+    protected function avoidIntMin(int &$value): void
+    {
+        if ($value === PHP_INT_MIN) $value = IntRange::MIN;
     }
 }
