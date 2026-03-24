@@ -6,6 +6,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Generator as FloatGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Generator as IntegerGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
@@ -17,6 +18,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloatValidator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions as OnlyPositiveFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Relative as RelativeFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative as OnlyNegativeIntegerValidator;
@@ -50,6 +52,7 @@ use RoundingMode;
 #[UsesClass(PositiveFloat::class)]
 #[UsesClass(NegativeFloat::class)]
 #[UsesClass(RelativeFloat::class)]
+#[UsesClass(PositiveFraction::class)]
 #[UsesClass(IntegerValidator::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
@@ -60,6 +63,7 @@ use RoundingMode;
 #[UsesClass(RelativeIntegerValidator::class)]
 #[UsesClass(RelativeExceptZeroIntegerValidator::class)]
 #[UsesClass(OnlyNegativeFloatValidator::class)]
+#[UsesClass(OnlyPositiveFractionsValidator::class)]
 #[UsesClass(RelativeFloatValidator::class)]
 class WithStaticFakerHelpersTest extends BaseTestCase
 {
@@ -287,12 +291,12 @@ class WithStaticFakerHelpersTest extends BaseTestCase
     public function test_positive_random_float_strict(): void
     {
         // Act
-        $number = $this->positiveRandomFloatStrict();
+        $number = $this->positiveRandomFraction();
 
         // Assert
         $this->assertIsFloat($number);
         $this->assertGreaterThan(0, $number);
-        $this->assertNotEquals(round($number, 0, RoundingMode::HalfTowardsZero), $number);
+        $this->assertIsFraction($number);
     }
 
     #[TestDox("can generate a negative random float with a fractional part.")]

@@ -9,8 +9,8 @@ class OnlyNegative extends Validator
     {
         if ($this->notAllowedFloat($min)) $min = FloatRange::MIN;
         if ($this->isPositive($min)) $min = FloatRange::MIN;
-        if ($this->notAllowedFloat($max)) $max = -PHP_FLOAT_MIN;
-        if ($this->isPositive($max)) $max = -PHP_FLOAT_MIN;
+        if ($this->notAllowedFloat($max)) $max = -FloatRange::MICRO;
+        if ($this->isPositive($max)) $max = -FloatRange::MICRO;
         $this->swap($min, $max);
     }
 }

@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests;
 
 use PHPUnit\Framework\TestCase;
+use RoundingMode;
 
 class BaseTestCase extends TestCase
 {
@@ -39,5 +40,13 @@ class BaseTestCase extends TestCase
     {
         $this->assertGreaterThan($min, $actual);
         $this->assertLessThan($max, $actual);
+    }
+
+    /**
+     * Assert `$actual` is a fraction.
+     */
+    protected function assertIsFraction(float $actual): void
+    {
+        $this->assertNotEquals(round($actual, 0, RoundingMode::HalfTowardsZero), $actual);
     }
 }

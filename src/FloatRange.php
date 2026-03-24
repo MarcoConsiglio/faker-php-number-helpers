@@ -29,7 +29,7 @@ class FloatRange
      * 
      * @see https://float.exposed/0x432ffffffffffffe
      */
-    public const float STRICT_MAX = 4503599627370495;
+    public const float MAX_FRACTION = 4503599627370495;
 
     /**
      * Construct a `FloatRange`.
