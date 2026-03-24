@@ -5,6 +5,7 @@ use Faker\Factory;
 use Faker\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveExceptZero as PositiveIntegerExceptZero;
@@ -141,14 +142,7 @@ trait WithStaticFakerHelpers
         float $max = PHP_FLOAT_MAX, 
         int $precision = PHP_FLOAT_DIG
     ): float {
-        if (self::areBothNegative($min, $max))
-            return self::negativeRandomFloat($min, $max, $precision);
-        if (self::areBothPositive($min, $max))
-            return self::positiveRandomFloat($min, $max, $precision);
-        if (self::$faker->boolean)
-            return self::positiveRandomFloat(0, $max, $precision);
-        else
-            return self::negativeRandomFloat($min, NextAfter::nextDown(0), $precision);
+        return new RelativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
