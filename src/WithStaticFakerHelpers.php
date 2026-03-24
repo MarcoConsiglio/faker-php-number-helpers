@@ -10,6 +10,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as PositiveFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative as RelativeFloat;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\RelativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\RelativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Negative as NegativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInteger;
@@ -212,10 +213,7 @@ trait WithStaticFakerHelpers
      */
     protected static function nonZeroRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = PHP_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
     {
-        do {
-            $number = self::randomFloat($min, $max, $precision);
-        } while ($number == 0);
-        return $number;
+        return new RelativeExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
