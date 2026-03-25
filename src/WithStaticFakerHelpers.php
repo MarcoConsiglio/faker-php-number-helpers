@@ -17,9 +17,6 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInte
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveExceptZero as PositiveIntegerExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative as RelativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as RelativeIntegerExceptZero;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\RelativeFractions;
-use Nsfisis\NextAfter\NextAfter;
-use RoundingMode;
 
 /**
  * FakerPHP support trait that provides helper functions to easily generate 
@@ -145,8 +142,8 @@ trait WithStaticFakerHelpers
      * Return a random relative float.
      */
     protected static function randomFloat(
-        float $min = -PHP_FLOAT_MAX, 
-        float $max = PHP_FLOAT_MAX, 
+        float $min = FloatRange::MIN, 
+        float $max = FloatRange::MAX, 
         int $precision = PHP_FLOAT_DIG
     ): float {
         return new RelativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
@@ -155,47 +152,65 @@ trait WithStaticFakerHelpers
     /**
      * Return a positive random float.
      */
-    protected static function positiveRandomFloat(float $min = 0, float $max = PHP_FLOAT_MAX, int $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function positiveRandomFloat(
+        float $min = 0, 
+        float $max = FloatRange::MAX, 
+        int $precision = PHP_FLOAT_DIG
+    ): float {
         return new PositiveFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a negative random float.
      */
-    protected static function negativeRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = 0, int $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function negativeRandomFloat(
+        float $min = FloatRange::MIN, 
+        float $max = 0, 
+        int $precision = PHP_FLOAT_DIG
+    ): float {
         return new NegativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a random relative float that is not a `float` type integer.
      */
-    protected static function randomFraction(float $min = -self::STRICT_FLOAT_MAX, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function randomFraction(
+        float $min = -FloatRange::MAX_FRACTION, 
+        float $max = FloatRange::MAX_FRACTION, 
+        $precision = PHP_FLOAT_DIG
+    ): float {
         return new RelativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a positive random float that is not an integer.
      */
-    protected static function positiveRandomFraction(float $min = 0, float $max = self::STRICT_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function positiveRandomFraction(
+        float $min = 0, 
+        float $max = FloatRange::MAX_FRACTION, 
+        $precision = PHP_FLOAT_DIG
+    ): float {
         return new PositiveFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a negative random float that is not an integer.
      */
-    protected static function negativeRandomFraction(float $min = -self::STRICT_FLOAT_MAX, float $max = 0, $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function negativeRandomFraction(
+        float $min = -FloatRange::MAX_FRACTION, 
+        float $max = 0, 
+        $precision = PHP_FLOAT_DIG
+    ): float {
         return new NegativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a positve non zero random float.
      */
-    protected static function positiveNonZeroRandomFloat(float $min = 0, float $max = PHP_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
+    protected static function positiveNonZeroRandomFloat(
+        float $min = 0, 
+        float $max = FloatRange::MAX, 
+        $precision = PHP_FLOAT_DIG): float
     {
         return new PositiveExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
@@ -203,55 +218,22 @@ trait WithStaticFakerHelpers
     /**
      * Return a negative non zero random float.
      */
-    protected static function negativeNonZeroRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = 0, $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function negativeNonZeroRandomFloat(
+        float $min = FloatRange::MIN, 
+        float $max = 0, 
+        $precision = PHP_FLOAT_DIG
+    ): float {
         return new NegativeExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
     }
 
     /**
      * Return a random relative float except for zero.
      */
-    protected static function nonZeroRandomFloat(float $min = -PHP_FLOAT_MAX, float $max = PHP_FLOAT_MAX, $precision = PHP_FLOAT_DIG): float
-    {
+    protected static function nonZeroRandomFloat(
+        float $min = FloatRange::MIN, 
+        float $max = FloatRange::MAX, 
+        $precision = PHP_FLOAT_DIG
+    ): float {
         return new RelativeExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
-    }
-
-    /**
-     * Limit the `$precision` between `0` and `PHP_FLOAT_DIG`.
-     */
-    private static function normalizePrecision(int $precision): int
-    {
-        $precision = abs($precision);
-        if ($precision > PHP_FLOAT_DIG) $precision = PHP_FLOAT_DIG;
-        return $precision;       
-    }
-
-    /**
-     * If `$value` is negative limit to `PHP_INT_MIN + 1`.
-     */
-    private static function limitNegativeInteger(int $value): int
-    {
-        if ($value === PHP_INT_MIN) return PHP_INT_MIN + 1;
-        return $value;
-    }
-
-    /**
-     * Limit the `$value` to the minimum number that can still have a fractional
-     * part.
-     */
-    private static function limitNegativeStrictFloat(float $value): float
-    {
-        if ($value < -self::STRICT_FLOAT_MAX) return self::STRICT_FLOAT_MAX;
-        return $value;
-    }
-
-    /**
-     * Limit the `$value` to the maximum number that can still have a fractional
-     * part.
-     */
-    private static function limitPositiveStrictFloat(float $value): float
-    {
-        if ($value > self::STRICT_FLOAT_MAX) return self::STRICT_FLOAT_MAX;
-        return $value;
     }
 }
