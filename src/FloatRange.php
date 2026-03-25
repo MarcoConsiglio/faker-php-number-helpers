@@ -32,6 +32,12 @@ class FloatRange
     public const float MAX_FRACTION = 4503599627370495;
 
     /**
+     * The minimum `float` value that can still have a fractional part. This 
+     * value is based on a 64 bit `float`.
+     */
+    public const float MIN_FRACTION = -self::MAX_FRACTION;
+
+    /**
      * Construct a `FloatRange`.
      * 
      * @param float $start Range start.

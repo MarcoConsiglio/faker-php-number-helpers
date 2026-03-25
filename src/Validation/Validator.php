@@ -54,4 +54,13 @@ abstract class Validator
     {
         return self::isPositive($value_1) && self::isPositive($value_2);
     }
+
+    /**
+     * Return `true` if `$value_1` is less than or equal to `$value_2`, 
+     * `false` otherwise.
+     */
+    public static function lessThanOrEqual(int|float $value_1, int|float $value_2): bool
+    {
+        return $value_1 <= $value_2;
+    }
 }

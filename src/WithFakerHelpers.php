@@ -22,7 +22,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as Re
  * FakerPHP support trait that provides helper functions to easily generate 
  * random numbers inside PHPUnit data providers.
  */
-trait WithStaticFakerHelpers
+trait WithFakerHelpers
 {
     /**
      * The maximum `float` value that can still have a fractional part. This 
