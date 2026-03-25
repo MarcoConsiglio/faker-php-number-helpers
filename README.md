@@ -59,7 +59,7 @@ class MyUnitTestCase extends TestCase
 }
 ```
 
-In some tests, you'll need a PHPUnit data provider, which is a static function. In this case you can use `WithStaticFakerHelpers` trait which contain a static `Faker\Generator` property and a static `setUpFaker()` method. This trait helps you to set up a `Faker\Generator` when PHPUnit call the data provider method, which is done prior to call a `setUp` method.
+In some tests, you'll need a PHPUnit data provider, which is a static function. In this case you can use call statically `setUpFaker()` method in order to set up a static `Faker\Generator` when PHPUnit call the data provider method, which is done prior to call a `setUp()` method.
 
 ```php
 <?php
@@ -99,32 +99,42 @@ class MyUnitTestCase extends TestCase
     }
 }
 ```
-
-**You cannot use `WithFakerHelpers` and `WithStaticFakerHelpers` together.**
+# Constants
+Several constants provide the limit for random generation.
+## Integer
+| Constant | Value |
+| :---: | :---: |
+| `IntRange::MIN` | `PHP_INT_MIN + 1` |
+| `IntRange::MAX` | `PHP_INT_MAX` |
+| `FloatRange::MIN` | `-PHP_FLOAT_MAX` |
+| `FloatRange::MAX` | `PHP_FLOAT_MAX` |
+| `FloatRange::MICRO` | `PHP_FLOAT_MIN` |
+| `FloatRange::MAX_FRACTION` | 4,503,599,627,370,495.0 |
+| `FloatRange::MIN_FRACTION` | -4,503,599,627,370,495.0 |
 
 # Available methods
 ## Integer generation
 | Method | Minimum | Maximum | Excluded |
 | ---: | :---: | :---: | :---: |
-| randomInteger() | PHP_INT_MIN | PHP_INT_MAX |  |
-| positiveRandomInteger() | 0 | PHP_INT_MAX |  |
-| negativeRandomInteger() | PHP_INT_MIN + 1 | -1 | 0 |
-| nonZeroRandomInteger() | PHP_INT_MIN + 1 | PHP_INT_MAX | 0 |
-| positiveNonZeroRandomInteger() | 1 | PHP_INT_MAX | 0 |
-| negativeNonZeroRandomInteger() | PHP_INT_MIN + 1 | -1 | 0 |
+| `randomInteger()` | `PHP_INT_MIN` | `PHP_INT_MAX` |  |
+| `positiveRandomInteger()` | 0 | `PHP_INT_MAX` |  |
+| `negativeRandomInteger()` | `PHP_INT_MIN` + 1 | -1 | 0 |
+| `nonZeroRandomInteger()` | `PHP_INT_MIN` + 1 | `PHP_INT_MAX` | 0 |
+| `positiveNonZeroRandomInteger()` | 1 | `PHP_INT_MAX` | 0 |
+| `negativeNonZeroRandomInteger()` | `PHP_INT_MIN` + 1 | -1 | 0 |
 
 ## Float generation
 | Method | Minimum | Maximum | Excluded |
-| ---: | :---: | :---: | :---: |
-| randomFloat() | -PHP_FLOAT_MAX | PHP_FLOAT_MAX |  |
-| positiveRandomFloat() | 0 | PHP_FLOAT_MAX |  |
-| negativeRandomFloat() | -PHP_FLOAT_MAX | 0 | 0 |
-| nonZeroRandomFloat() | -PHP_FLOAT_MAX | PHP_FLOAT_MAX | 0 |
-| positiveNonZeroRandomFloat() | 0 | PHP_FLOAT_MAX | 0 |
-| negativeNonZeroRandomFloat() | -PHP_FLOAT_MAX | 0 | 0 |
-| randomFloatStrict() | -self::STRICT_FLOAT_MAX | self::STRICT_FLOAT_MAX | integer `float`s |
-| positiveRandomFloatStrict() | 0 | self::STRICT_FLOAT_MAX | integer `float`s |
-| negativeRandomFloatStrict() | -self::STRICT_FLOAT_MAX | 0 | integer `float`s |
+| -----: | :-----: | :-----: | :------: |
+| `randomFloat()` | `-PHP_FLOAT_MAX` | `PHP_FLOAT_MAX` |  |
+| `positiveRandomFloat()` | 0 | `PHP_FLOAT_MAX` |  |
+| `negativeRandomFloat()` | `-PHP_FLOAT_MAX` | 0 | 0 |
+| `nonZeroRandomFloat()` | `-PHP_FLOAT_MAX` | `PHP_FLOAT_MAX` | 0 |
+| `positiveNonZeroRandomFloat()` | `PHP_FLOAT_MIN` | `PHP_FLOAT_MAX` | 0 |
+| `negativeNonZeroRandomFloat()` | `-PHP_FLOAT_MAX` | `-PHP_FLOAT_MIN` | 0 |
+| `randomFraction()` | `-FloatRange::MAX_FRACTION` | `FloatRange::MAX_FRACTION` | integer `float`s |
+| `positiveRandomFraction()` | `PHP_FLOAT_MIN` | `FloatRange::MAX_FRACTION` | integer `float`s |
+| `negativeRandomFraction()` | `-FloatRange::MAX_FRACTION` | `-PHP_FLOAT_MIN` | integer `float`s |
 
 # API Documentation
 See more in the API Documentation at `./docs/html/index.html`.
