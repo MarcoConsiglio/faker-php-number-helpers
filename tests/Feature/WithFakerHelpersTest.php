@@ -1,5 +1,5 @@
 <?php
-namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit;
+namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Feature;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
@@ -38,7 +38,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Relative as Relative
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\RelativeExceptZero as RelativeIntegerExceptZeroValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Validator as IntegerValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
-use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
+use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
 use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -47,8 +47,8 @@ use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
 use PHPUnit\Framework\MockObject\Stub;
 
-#[TestDox("The WithStaticFakerHelpers trait")]
-#[CoversTrait(WithStaticFakerHelpers::class)]
+#[TestDox("The WithFakerHelpers trait")]
+#[CoversTrait(WithFakerHelpers::class)]
 #[UsesClass(IntRange::class)]
 #[UsesClass(FloatRange::class)]
 #[UsesClass(IntegerGenerator::class)]
@@ -84,9 +84,9 @@ use PHPUnit\Framework\MockObject\Stub;
 #[UsesClass(OnlyPositiveFractionsValidator::class)]
 #[UsesClass(OnlyNegativeFractionsValidator::class)]
 #[UsesClass(RelativeFractionsValidator::class)]
-class WithStaticFakerHelpersTest extends BaseTestCase
+class WithFakerHelpersTest extends BaseTestCase
 {
-    use WithStaticFakerHelpers;
+    use WithFakerHelpers;
 
     #[Override]
     protected function setUp(): void
