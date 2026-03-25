@@ -31,7 +31,7 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
         $this->assertEquals(7, $max);
 
         /**
-         * $min <= 0
+         * $min ≤ 0
          * $max > 0
          */
         // Arrange
@@ -47,7 +47,7 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
 
         /**
          * $min > 0
-         * $max <= 0
+         * $max ≤ 0
          */
         // Arrange
         $min = +4;
@@ -61,8 +61,8 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
         $this->assertEquals(IntRange::MAX, $max);
 
         /**
-         * $min <= 0
-         * $max <= 0
+         * $min ≤ 0
+         * $max ≤ 0
          */
         // Arrange
         $min = 0;

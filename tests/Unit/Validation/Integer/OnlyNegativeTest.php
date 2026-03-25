@@ -15,8 +15,8 @@ class OnlyNegativeTest extends BaseTestCase
     public function test_range(): void
     {
         /**
-         * Negative min
-         * Negative max
+         * $min < 0
+         * $max < 0
          */
         // Arrange
         $min = -3;
@@ -31,8 +31,8 @@ class OnlyNegativeTest extends BaseTestCase
         $this->assertEquals(-1, $max);
 
         /**
-         * Positive min
-         * Negative max
+         * $min ≥ 0
+         * $max < 0
          */
         // Arrange
         $min = +5;
@@ -46,8 +46,8 @@ class OnlyNegativeTest extends BaseTestCase
         $this->assertEquals(-1, $max);
 
         /**
-         * Negative min
-         * Positive max
+         * $min < 0
+         * $max ≥ 0
          */
         // Arrange
         $min = -7;
@@ -61,8 +61,8 @@ class OnlyNegativeTest extends BaseTestCase
         $this->assertEquals(-1, $max);
 
         /**
-         * Positive min
-         * Positive max
+         * $min ≥ 0
+         * $max ≥ 0
          */
         // Arrange
         $min = +3;

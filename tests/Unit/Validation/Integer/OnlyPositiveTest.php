@@ -15,16 +15,12 @@ class OnlyPositiveTest extends BaseTestCase
     public function test_range(): void
     {
         /**
-         * Positive min
-         * Positive max
+         * $min ≥ 0
+         * $max ≥ 0
          */
         // Arrange
         $min = +3;
         $max = +5;
-        /**
-         * Positive min
-         * Negative max
-         */
         $validator = new OnlyPositive;
 
         // Act
@@ -35,8 +31,8 @@ class OnlyPositiveTest extends BaseTestCase
         $this->assertEquals(5, $max);
 
         /**
-         * Positive min
-         * Negative max
+         * $min ≥ 0 
+         * $max < 0 
          */
         // Arrange
         $min = +3;
@@ -50,8 +46,8 @@ class OnlyPositiveTest extends BaseTestCase
         $this->assertEquals(IntRange::MAX, $max);
 
         /**
-         * Negative min
-         * Positive max
+         * $min < 0
+         * $max ≥ 0
          */
         // Arrange
         $min = -5;
@@ -65,8 +61,8 @@ class OnlyPositiveTest extends BaseTestCase
         $this->assertEquals(7, $max);
 
         /**
-         * Negative min
-         * Negative max
+         * $min < 0
+         * $max < 0
          */
         // Arrange
         $min = -5;
