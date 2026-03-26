@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\Attributes\UsesClass;
 
-#[TestDox("The Negative integer random generator")]
+#[TestDox("The Negative random integer generator")]
 #[CoversClass(Negative::class)]
 #[UsesClass(IntRange::class)]
 #[UsesClass(OnlyNegative::class)]
