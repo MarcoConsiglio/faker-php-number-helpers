@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use Override;
 
 class OnlyNegativeFractions extends Negative
 {
@@ -16,11 +17,7 @@ class OnlyNegativeFractions extends Negative
         $this->swap($min, $max);
     }  
 
-    protected function areBothEqual(float $value_1, float $value_2): bool
-    {
-        return $value_1 === $value_2;     
-    }
-
+    #[Override]
     protected function setStandardMin(float &$min): void
     {
         $min = FloatRange::MIN_FRACTION;

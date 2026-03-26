@@ -56,6 +56,15 @@ abstract class Validator
     }
 
     /**
+     * Return `true` if both `$value_1` and `$value_2` are equal, `false` 
+     * otherwise.
+     */
+    protected function areBothEqual(float $value_1, float $value_2): bool
+    {
+        return $value_1 === $value_2;     
+    }
+
+    /**
      * Return `true` if `$value_1` is less than or equal to `$value_2`, 
      * `false` otherwise.
      */
