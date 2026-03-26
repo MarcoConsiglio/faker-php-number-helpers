@@ -1,16 +1,18 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
-
-class RelativeExceptZero extends Validator
+class RelativeExceptZero extends Relative
 {
     public function validate(float &$min, float &$max): void
     {
-        if ($this->notAllowedFloat($min)) $min = FloatRange::MIN;
-        if ($this->isZero($min)) $min = FloatRange::MIN;
-        if ($this->notAllowedFloat($max)) $max = FloatRange::MAX;
-        if ($this->isZero($max)) $max = FloatRange::MAX;
+        parent::validate($min, $max);
+        $this->avoidZero($min, $max);
         $this->swap($min, $max);
+    }
+
+    protected function avoidZero(float &$min, float &$max): void
+    {
+        if ($this->isZero($min)) $this->setStandardMin($min);
+        if ($this->isZero($max)) $this->setStandardMax($max);
     }
 }
