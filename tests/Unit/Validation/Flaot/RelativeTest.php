@@ -74,5 +74,19 @@ class RelativeTest extends BaseTestCase
         // Assert
         $this->assertSame(-4.5, $min);
         $this->assertSame(8.4, $max);
+
+        /**
+         * $min > $max
+         */
+        // Arrange
+        $min = 8.6;
+        $max = 2.5;
+
+        // Act
+        $validator->validate($min, $max);
+
+        // Assert
+        $this->assertSame(2.5, $min);
+        $this->assertSame(8.6, $max);
     }
 }

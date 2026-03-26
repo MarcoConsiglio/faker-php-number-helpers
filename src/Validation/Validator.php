@@ -68,7 +68,7 @@ abstract class Validator
      * Return `true` if `$value_1` is less than or equal to `$value_2`, 
      * `false` otherwise.
      */
-    public static function lessThanOrEqual(int|float $value_1, int|float $value_2): bool
+    protected function lessThanOrEqual(int|float $value_1, int|float $value_2): bool
     {
         return $value_1 <= $value_2;
     }

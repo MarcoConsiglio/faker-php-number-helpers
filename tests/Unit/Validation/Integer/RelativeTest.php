@@ -13,6 +13,10 @@ class RelativeTest extends BaseTestCase
     #[TestDox("allows all integers.")]
     public function test_range(): void
     {
+        /**
+         * ∀ $min
+         * ∀ $max
+         */
         // Arrange
         $min = -3;
         $max = +7;
