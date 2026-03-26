@@ -5,7 +5,7 @@ class RelativeExceptZero extends Relative
 {
     public function validate(float &$min, float &$max): void
     {
-        parent::validate($min, $max);
+        $this->avoidNotAllowedFloats($min, $max);
         $this->avoidZero($min, $max);
         $this->swap($min, $max);
     }
