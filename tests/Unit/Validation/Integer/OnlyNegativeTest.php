@@ -27,8 +27,8 @@ class OnlyNegativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-3, $min);
-        $this->assertEquals(-1, $max);
+        $this->assertSame(-3, $min);
+        $this->assertSame(-1, $max);
 
         /**
          * $min ≥ 0
@@ -42,8 +42,8 @@ class OnlyNegativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(IntRange::MIN, $min);
-        $this->assertEquals(-1, $max);
+        $this->assertSame(IntRange::MIN, $min);
+        $this->assertSame(-1, $max);
 
         /**
          * $min < 0
@@ -57,8 +57,8 @@ class OnlyNegativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-7, $min);
-        $this->assertEquals(-1, $max);
+        $this->assertSame(-7, $min);
+        $this->assertSame(-1, $max);
 
         /**
          * $min ≥ 0
@@ -72,8 +72,8 @@ class OnlyNegativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(IntRange::MIN, $min);
-        $this->assertEquals(-1, $max);
+        $this->assertSame(IntRange::MIN, $min);
+        $this->assertSame(-1, $max);
 
         /**
          * $min = PHP_INT_MIN
@@ -87,7 +87,7 @@ class OnlyNegativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(IntRange::MIN, $min);
-        $this->assertEquals(-3, $max);
+        $this->assertSame(IntRange::MIN, $min);
+        $this->assertSame(-3, $max);
     }
 }

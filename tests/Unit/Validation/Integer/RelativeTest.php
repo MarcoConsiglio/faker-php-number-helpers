@@ -22,7 +22,7 @@ class RelativeTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-3, $min);
-        $this->assertEquals(7, $max);
+        $this->assertSame(-3, $min);
+        $this->assertSame(7, $max);
     }
 }

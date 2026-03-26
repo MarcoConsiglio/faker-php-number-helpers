@@ -27,8 +27,8 @@ class OnlyPositiveTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(3, $min);
-        $this->assertEquals(5, $max);
+        $this->assertSame(3, $min);
+        $this->assertSame(5, $max);
 
         /**
          * $min ≥ 0 
@@ -42,8 +42,8 @@ class OnlyPositiveTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(3, $min);
-        $this->assertEquals(IntRange::MAX, $max);
+        $this->assertSame(3, $min);
+        $this->assertSame(IntRange::MAX, $max);
 
         /**
          * $min < 0
@@ -57,8 +57,8 @@ class OnlyPositiveTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(0, $min);
-        $this->assertEquals(7, $max);
+        $this->assertSame(0, $min);
+        $this->assertSame(7, $max);
 
         /**
          * $min < 0
@@ -72,8 +72,8 @@ class OnlyPositiveTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(0, $min);
-        $this->assertEquals(IntRange::MAX, $max);
+        $this->assertSame(0, $min);
+        $this->assertSame(IntRange::MAX, $max);
 
         /**
          * $min > $max
@@ -86,7 +86,7 @@ class OnlyPositiveTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(3, $min);
-        $this->assertEquals(5, $max);
+        $this->assertSame(3, $min);
+        $this->assertSame(5, $max);
     }
 }

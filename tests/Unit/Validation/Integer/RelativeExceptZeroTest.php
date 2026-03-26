@@ -26,8 +26,8 @@ class RelativeExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-1, $min);
-        $this->assertEquals(+1, $max);
+        $this->assertSame(-1, $min);
+        $this->assertSame(+1, $max);
 
         /**
          * $min = 0
@@ -41,8 +41,8 @@ class RelativeExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-1, $min);
-        $this->assertEquals(7, $max);
+        $this->assertSame(-1, $min);
+        $this->assertSame(7, $max);
 
         /**
          * $min ≠ 0
@@ -56,8 +56,8 @@ class RelativeExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-3, $min);
-        $this->assertEquals(1, $max);
+        $this->assertSame(-3, $min);
+        $this->assertSame(1, $max);
 
         /**
          * $min = 0
@@ -71,7 +71,7 @@ class RelativeExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertEquals(-1, $min);
-        $this->assertEquals(+1, $max);
+        $this->assertSame(-1, $min);
+        $this->assertSame(+1, $max);
     }
 }
