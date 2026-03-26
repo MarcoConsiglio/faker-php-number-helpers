@@ -4,7 +4,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests;
 use PHPUnit\Framework\TestCase;
 use RoundingMode;
 
-class BaseTestCase extends TestCase
+abstract class BaseTestCase extends TestCase
 {
     /**
      * Assert `$actual` is between `$min` and `$max`. This is a Custom Assertion.
