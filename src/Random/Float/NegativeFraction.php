@@ -13,8 +13,8 @@ class NegativeFraction extends Generator
         do {
             $number = $this->generator->randomFloat(
                 $precision,
-                $this->range->start,
-                $this->range->end
+                abs($this->range->end),
+                abs($this->range->start)
             );
         } while (Validator::hasNoFraction($number));
         return -$number;

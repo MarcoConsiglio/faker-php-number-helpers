@@ -74,5 +74,19 @@ class OnlyPositiveTest extends BaseTestCase
         // Assert
         $this->assertEquals(0, $min);
         $this->assertEquals(IntRange::MAX, $max);
+
+        /**
+         * $min > $max
+         */
+        // Arrange
+        $min = 5;
+        $max = 3;
+
+        // Act
+        $validator->validate($min, $max);
+
+        // Assert
+        $this->assertEquals(3, $min);
+        $this->assertEquals(5, $max);
     }
 }

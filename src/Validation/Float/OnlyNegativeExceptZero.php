@@ -3,14 +3,12 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 
-class OnlyNegativeExceptZero extends Validator
+class OnlyNegativeExceptZero extends Negative
 {
     public function validate(float &$min, float &$max): void
     {
-        if ($this->notAllowedFloat($min)) $min = FloatRange::MIN;
-        if ($this->isPositive($min)) $min = FloatRange::MIN;
-        if ($this->notAllowedFloat($max)) $max = -FloatRange::MICRO;
-        if ($this->isPositive($max)) $max = -FloatRange::MICRO;
+        $this->avoidNotAllowedFloats($min, $max);
+        $this->avoidPositiveFloats($min, $max);
         $this->swap($min, $max);
     }
 }

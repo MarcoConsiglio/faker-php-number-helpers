@@ -74,5 +74,20 @@ class OnlyNegativeTest extends BaseTestCase
         // Assert
         $this->assertEquals(IntRange::MIN, $min);
         $this->assertEquals(-1, $max);
+
+        /**
+         * $min = PHP_INT_MIN
+         * $max < 0
+         */
+        // Arrange
+        $min = PHP_INT_MIN;
+        $max = -3;
+
+        // Act
+        $validator->validate($min, $max);
+
+        // Assert
+        $this->assertEquals(IntRange::MIN, $min);
+        $this->assertEquals(-3, $max);
     }
 }
