@@ -22,7 +22,7 @@ class PositiveExceptZeroTest extends GeneratorTest
     {
         // Arrange
         $generator = new PositiveExceptZero(
-            $this->generator,
+            $this->faker,
             new IntRange(1, IntRange::MAX)
         );
 

@@ -22,7 +22,7 @@ class NegativeTest extends GeneratorTest
     {
         // Arrange
         $generator = new Negative(
-            $this->generator, 
+            $this->faker, 
             new IntRange(IntRange::MIN, -1)
         );
 

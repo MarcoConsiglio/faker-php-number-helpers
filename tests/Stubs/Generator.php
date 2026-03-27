@@ -5,7 +5,8 @@ use Faker\Generator as FakerGenerator;
 
 class Generator extends FakerGenerator
 {
-    public bool $boolean {
-        get { return parent::$boolean; }
+    public function boolean($chanceOfGettingTrue = 50): bool
+    {
+        return parent::boolean($chanceOfGettingTrue);
     }
 }

@@ -88,13 +88,6 @@ class WithFakerHelpersTest extends BaseTestCase
 {
     use WithFakerHelpers;
 
-    #[Override]
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->setUpFaker();
-    }
-
     #[TestDox("can generate a random integer.")]
     public function test_random_integer(): void
     {
@@ -199,7 +192,7 @@ class WithFakerHelpersTest extends BaseTestCase
          * Positive outcome
          */
         // Arrange
-        $this->trickFakerToGetTrueOut();
+        $this->injectFaker($this->trickFakerToGetTrueOut());
 
         // Act
         $number = $this->randomFloat();
@@ -214,7 +207,7 @@ class WithFakerHelpersTest extends BaseTestCase
          * Negative outcome
          */
         // Arrange
-        $this->trickFakerToGetFalseOut();
+        $this->injectFaker($this->trickFakerToGetFalseOut());
 
         // Act
         $number = $this->randomFloat();
@@ -311,7 +304,7 @@ class WithFakerHelpersTest extends BaseTestCase
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertLessThan(0, $number);    
+        $this->assertLessThan(0, $number);
     }
 
     #[DataProvider("fakeDataProvider")]
@@ -328,32 +321,5 @@ class WithFakerHelpersTest extends BaseTestCase
         return [
             [self::randomInteger()]
         ];
-    }
-
-    /**
-     * Replace the `Faker\Generator` implementetion with one that return `true`
-     * every time the `$boolean` property is called.
-     */
-    protected function trickFakerToGetTrueOut(): void
-    {
-        $builder = $this->getStubBuilder(Generator::class);
-        $builder->onlyMethods([]);
-        /** @var Generator&Stub */
-        $faker_stub = $builder->getStub();
-        $faker_stub->method(PropertyHook::get("boolean"))->willReturn(true);
-        self::$faker = $faker_stub;
-    }
-
-    /**
-     * Replace the `Faker\Generator` implementetion with one that return `false`
-     * every time the `$boolean` property is called.
-     */
-    protected function trickFakerToGetFalseOut(): void
-    {
-        $builder = $this->getStubBuilder(Generator::class);
-        $builder->onlyMethods([]);
-        $faker_stub = $builder->getStub();
-        $faker_stub->method(PropertyHook::get("boolean"))->willReturn(false);
-        self::$faker = $faker_stub;
     }
 }

@@ -33,23 +33,11 @@ class RelativeTest extends GeneratorTest
     public function test_random_generation(): void
     {
         /**
-         * Relative range
-         */
-        // Arrange
-        $generator = new Relative(
-            $this->generator,
-            new IntRange(IntRange::MIN, IntRange::MAX)
-        );
-
-        // Act & Assert
-        $this->assertIsInt($generator->generate());
-
-        /**
          * Negative range
          */
         // Arrange
         $generator = new Relative(
-            $this->generator,
+            $this->faker,
             new IntRange(IntRange::MIN, -1)
         );
 
@@ -65,7 +53,7 @@ class RelativeTest extends GeneratorTest
          */
         // Arrange
         $generator = new Relative(
-            $this->generator,
+            $this->faker,
             new IntRange(0, IntRange::MAX)
         );
 
@@ -81,11 +69,25 @@ class RelativeTest extends GeneratorTest
          */
         // Arrange
         $generator = new Relative(
-            $this->generator,
+            $this->faker,
             new IntRange(IntRange::MAX, IntRange::MIN)
         );
 
         // Act & Assert
         $this->assertIsInt($generator->generate());
+
+        /**
+         * Relative range
+         * Positive outcome
+         */
+        // Arrange
+        $generator = new Relative(
+            $this->faker,
+            new IntRange(IntRange::MIN, IntRange::MAX)
+        );
+
+        // Act & Assert
+        $this->assertIsInt($generator->generate());
+        $this->markTestIncomplete("How to deal with Generator stub?");
     }
 }
