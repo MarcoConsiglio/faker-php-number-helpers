@@ -81,13 +81,35 @@ class RelativeTest extends GeneratorTest
          * Positive outcome
          */
         // Arrange
+        $this->injectFakerMock($this->trickFakerToGetTrueOut());
         $generator = new Relative(
             $this->faker,
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 
-        // Act & Assert
-        $this->assertIsInt($generator->generate());
-        $this->markTestIncomplete("How to deal with Generator stub?");
+        // Act
+        $number = $generator->generate();
+
+        // Assert
+        $this->assertIsInt($number);
+        $this->assertGreaterThanOrEqual(0, $number);
+
+        /**
+         * Relative range
+         * Negative outcome
+         */
+        // Arrange
+        $this->injectFakerMock($this->trickFakerToGetFalseOut());
+        $generator = new Relative(
+            $this->faker,
+            new IntRange(IntRange::MIN, IntRange::MAX)
+        );
+
+        // Act
+        $number = $generator->generate();
+
+        // Assert
+        $this->assertIsInt($number);
+        $this->assertLessThan(0, $number);
     }
 }

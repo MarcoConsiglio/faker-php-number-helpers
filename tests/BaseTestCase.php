@@ -57,9 +57,9 @@ abstract class BaseTestCase extends TestCase
         $this->assertNotEquals(round($actual, 0, RoundingMode::HalfTowardsZero), $actual);
     }
 
-    protected static function injectFaker(Generator $generator): void
+    protected function injectFakerMock(Generator $generator): void
     {
-        self::$faker = $generator;
+        $this->faker = $generator;
     }
 
     /**
