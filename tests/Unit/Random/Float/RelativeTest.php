@@ -42,6 +42,7 @@ class RelativeTest extends GeneratorTest
         // Arrange
         $generator = new Relative(
             $this->faker,
+            new RelativeValidator,
             new FloatRange(0, FloatRange::MAX)
         );
 
@@ -59,6 +60,7 @@ class RelativeTest extends GeneratorTest
         // Arrange
         $generator = new Relative(
             $this->faker,
+            new RelativeValidator,
             new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
         );
 
@@ -76,6 +78,7 @@ class RelativeTest extends GeneratorTest
         // Arrange
         $generator = new Relative(
             $this->trickFakerToGetTrueOut(),
+            new RelativeValidator,
             new FloatRange(FloatRange::MIN, FloatRange::MAX)
         );
 
@@ -93,6 +96,7 @@ class RelativeTest extends GeneratorTest
         // Arrange
         $generator = new Relative(
             $this->trickFakerToGetFalseOut(),
+            new RelativeValidator,
             new FloatRange(FloatRange::MIN, FloatRange::MAX)
         );
 

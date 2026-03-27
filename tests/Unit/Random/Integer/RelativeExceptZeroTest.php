@@ -37,6 +37,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->faker,
+            new RelativeExceptZeroValidator,
             new IntRange(1, IntRange::MAX)
         );
 
@@ -54,6 +55,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->faker,
+            new RelativeExceptZeroValidator,
             new IntRange(IntRange::MIN, -1)
         );
 
@@ -71,6 +73,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->trickFakerToGetTrueOut(),
+            new RelativeExceptZeroValidator,
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 
@@ -88,6 +91,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->trickFakerToGetFalseOut(),
+            new RelativeExceptZeroValidator,
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 

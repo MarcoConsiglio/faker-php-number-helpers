@@ -6,7 +6,6 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\GeneratorTest;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -18,7 +17,6 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(FloatRange::class)]
 #[UsesClass(Negative::class)]
 #[UsesClass(OnlyNegative::class)]
-#[UsesClass(OnlyNegativeExceptZero::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
 class NegativeExceptZeroTest extends GeneratorTest
@@ -29,6 +27,7 @@ class NegativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new NegativeExceptZero(
             $this->faker,
+            new OnlyNegative,
             new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
         );
 

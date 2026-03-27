@@ -16,6 +16,6 @@ class Positive extends Generator
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositive);
+        $this->range->validate($this->validator);
     }
 }

@@ -31,9 +31,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(PositiveExceptZero::class)]
 #[UsesClass(NegativeValidator::class)]
 #[UsesClass(OnlyNegative::class)]
-#[UsesClass(OnlyNegativeExceptZero::class)]
 #[UsesClass(OnlyPositive::class)]
-#[UsesClass(OnlyNegativeExceptZero::class)]
 #[UsesClass(Positive::class)]
 #[UsesClass(Relative::class)]
 #[UsesClass(RelativeExceptZero::class)]
@@ -54,6 +52,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->faker,
+            new RelativeExceptZeroValidator,
             new FloatRange(FloatRange::MICRO, FloatRange::MAX)
         );
 
@@ -71,6 +70,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->faker,
+            new RelativeExceptZeroValidator,
             new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
         );
 
@@ -88,6 +88,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->trickFakerToGetTrueOut(),
+            new RelativeExceptZeroValidator,
             new FloatRange(FloatRange::MIN, FloatRange::MAX)
         );
 
@@ -105,6 +106,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         // Arrange
         $generator = new RelativeExceptZero(
             $this->trickFakerToGetFalseOut(),
+            new RelativeExceptZeroValidator,
             new FloatRange(FloatRange::MIN, FloatRange::MAX)
         );
 

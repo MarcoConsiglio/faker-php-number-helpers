@@ -43,6 +43,7 @@ class RelativeFractionTest extends GeneratorTest
         // Arrange
         $generator = new RelativeFraction(
             $this->faker,
+            new RelativeFractions,
             new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
         );
 
@@ -60,6 +61,7 @@ class RelativeFractionTest extends GeneratorTest
         // Arrange
         $generator = new RelativeFraction(
             $this->faker,
+            new RelativeFractions,
             new FloatRange(FloatRange::MIN_FRACTION, -FloatRange::MICRO)
         );
 
@@ -77,6 +79,7 @@ class RelativeFractionTest extends GeneratorTest
         // Arrange
         $generator = new RelativeFraction(
             $this->trickFakerToGetTrueOut(),
+            new RelativeFractions,
             new FloatRange(FloatRange::MIN_FRACTION, FloatRange::MAX_FRACTION)
         );
 
@@ -94,6 +97,7 @@ class RelativeFractionTest extends GeneratorTest
         // Arrange
         $generator = new RelativeFraction(
             $this->trickFakerToGetFalseOut(),
+            new RelativeFractions,
             new FloatRange(FloatRange::MIN_FRACTION, FloatRange::MAX_FRACTION)
         );
 

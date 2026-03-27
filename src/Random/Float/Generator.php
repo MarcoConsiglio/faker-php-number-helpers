@@ -4,14 +4,16 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Generator as RandomGenerator;
 use Faker\Generator as FakerGenerator;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 abstract class Generator extends RandomGenerator
 {
     public function __construct(
-        FakerGenerator &$generator, 
+        FakerGenerator $generator,
+        Validator $validator, 
         protected FloatRange $range
     ) {
-        parent::__construct($generator);
+        parent::__construct($generator, $validator);
     }
 
     abstract public function generate(int $precision): float;

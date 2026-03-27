@@ -7,14 +7,16 @@ class PositiveExceptZero extends Generator
 {
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
-        $this->validate();
         return 
-            new Positive($this->generator, $this->range)
+            new Positive(
+                $this->generator,
+                $this->validator,
+                $this->range)
             ->generate($precision);
     }
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositiveExceptZero);
+        $this->range->validate($this->validator);
     }
 }

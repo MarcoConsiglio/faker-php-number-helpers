@@ -16,12 +16,12 @@ class PositiveFraction extends Generator
                 $this->range->start,
                 $this->range->end
             );
-        } while (Validator::hasNoFraction($number));
+        } while ($this->validator->hasNoFraction($number));
         return $number;
     }
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositiveFractions);
+        $this->range->validate($this->validator);
     }
 }

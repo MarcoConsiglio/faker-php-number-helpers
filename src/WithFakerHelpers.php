@@ -17,6 +17,19 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Positive as PositiveInte
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveExceptZero as PositiveIntegerExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative as RelativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as RelativeIntegerExceptZero;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloats;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloats;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero as OnlyPositiveFloatsExceptZero;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Relative as RelativeFloats;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\RelativeExceptZero as RelativeFloatsExceptZero;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\RelativeFractions;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative as OnlyNegativeIntegers;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositive as OnlyPositiveIntegers;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositiveExceptZero as OnlyPositiveIntegersExceptZero;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Relative as RelativeIntegers;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\RelativeExceptZero as RelativeIntegersExceptZero;
 
 /**
  * FakerPHP support trait that provides helper functions to easily generate 
@@ -46,53 +59,15 @@ trait WithFakerHelpers
     }
 
     /**
-     * Return true if `$value` is zero.
-     */
-    private static function isZero(int|float $value): bool
-    {
-        return $value == 0;
-    }
-
-    /**
-     * Return true if `$value` is positive, false otherwise.
-     */
-    private static function isPositive(int|float $value): bool
-    {
-        return $value >= 0;
-    }
-
-    /**
-     * Return true if `$value` is negative, false otherwise.
-     */
-    private static function isNegative(int|float $value): bool
-    {
-        return $value < 0;
-    }
-
-    /**
-     * Return true if both `$value_1` and `$value_2` are negative, false 
-     * otherwise.
-     */
-    private static function areBothNegative(int|float $value_1, int|float $value_2): bool
-    {
-        return self::isNegative($value_1) && self::isNegative($value_2);
-    }
-
-    /**
-     * Return true if both `$value_1` and `$value_2` are positive, false 
-     * otherwise.
-     */
-    private static function areBothPositive(int|float $value_1, int|float $value_2): bool
-    {
-        return self::isPositive($value_1) && self::isPositive($value_2);
-    }
-
-    /**
      * Return a random relative integer.
      */
     protected static function randomInteger(int $min = PHP_INT_MIN, int $max = PHP_INT_MAX): int
     {
-        return new RelativeInteger(self::$faker, new IntRange($min, $max))->generate();
+        return new RelativeInteger(
+            self::$faker,
+            new RelativeIntegers,
+            new IntRange($min, $max)
+        )->generate();
     }
 
     /**
@@ -100,7 +75,11 @@ trait WithFakerHelpers
      */
     protected static function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
     {
-        return new PositiveInteger(self::$faker, new IntRange($min, $max))->generate();
+        return new PositiveInteger(
+            self::$faker,
+            new OnlyPositiveIntegers,
+            new IntRange($min, $max)
+        )->generate();
     }
 
     /**
@@ -108,7 +87,11 @@ trait WithFakerHelpers
      */
     protected static function negativeRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
     {
-        return new NegativeInteger(self::$faker, new IntRange($min, $max))->generate();
+        return new NegativeInteger(
+            self::$faker,
+            new OnlyNegativeIntegers,
+            new IntRange($min, $max)
+        )->generate();
     }
 
     /**
@@ -116,7 +99,11 @@ trait WithFakerHelpers
      */
     protected static function positiveNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
     {
-        return new PositiveIntegerExceptZero(self::$faker, new IntRange($min, $max))->generate();
+        return new PositiveIntegerExceptZero(
+            self::$faker,
+            new OnlyPositiveIntegersExceptZero,
+            new IntRange($min, $max)
+        )->generate();
     }
 
     /**
@@ -132,7 +119,11 @@ trait WithFakerHelpers
      */
     protected static function nonZeroRandomInteger(int $min = PHP_INT_MIN + 1, int $max = PHP_INT_MAX): int
     {
-        return new RelativeIntegerExceptZero(self::$faker, new IntRange($min, $max))->generate();
+        return new RelativeIntegerExceptZero(
+            self::$faker,
+            new RelativeIntegersExceptZero,
+            new IntRange($min, $max)
+        )->generate();
     }
     
     /**
@@ -143,7 +134,11 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX, 
         int $precision = PHP_FLOAT_DIG
     ): float {
-        return new RelativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new RelativeFloat(
+            self::$faker,
+            new RelativeFloats,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -154,7 +149,11 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX, 
         int $precision = PHP_FLOAT_DIG
     ): float {
-        return new PositiveFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new PositiveFloat(
+            self::$faker,
+            new OnlyPositiveFloats,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -165,7 +164,11 @@ trait WithFakerHelpers
         float $max = 0, 
         int $precision = PHP_FLOAT_DIG
     ): float {
-        return new NegativeFloat(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new NegativeFloat(
+            self::$faker,
+            new OnlyNegativeFloats,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -176,7 +179,11 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX_FRACTION, 
         $precision = PHP_FLOAT_DIG
     ): float {
-        return new RelativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new RelativeFraction(
+            self::$faker,
+            new RelativeFractions,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -187,7 +194,11 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX_FRACTION, 
         $precision = PHP_FLOAT_DIG
     ): float {
-        return new PositiveFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new PositiveFraction(
+            self::$faker,
+            new OnlyPositiveFractions,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -198,7 +209,11 @@ trait WithFakerHelpers
         float $max = 0, 
         $precision = PHP_FLOAT_DIG
     ): float {
-        return new NegativeFraction(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new NegativeFraction(
+            self::$faker,
+            new OnlyNegativeFractions,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -209,7 +224,11 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX, 
         $precision = PHP_FLOAT_DIG): float
     {
-        return new PositiveExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new PositiveExceptZero(
+            self::$faker,
+            new OnlyPositiveFloatsExceptZero,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -220,7 +239,11 @@ trait WithFakerHelpers
         float $max = 0, 
         $precision = PHP_FLOAT_DIG
     ): float {
-        return new NegativeExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new NegativeExceptZero(
+            self::$faker,
+            new OnlyNegativeFloats,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 
     /**
@@ -231,6 +254,10 @@ trait WithFakerHelpers
         float $max = FloatRange::MAX, 
         $precision = PHP_FLOAT_DIG
     ): float {
-        return new RelativeExceptZero(self::$faker, new FloatRange($min, $max))->generate($precision);
+        return new RelativeExceptZero(
+            self::$faker,
+            new RelativeFloatsExceptZero,
+            new FloatRange($min, $max)
+        )->generate($precision);
     }
 }

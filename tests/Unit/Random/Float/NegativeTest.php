@@ -26,6 +26,7 @@ class NegativeTest extends GeneratorTest
         // Arrange
         $generator = new Negative(
             $this->faker,
+            new OnlyNegative,
             new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
         );
 

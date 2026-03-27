@@ -25,6 +25,7 @@ class PositiveTest extends GeneratorTest
         // Arrange
         $generator = new Positive(
             $this->faker,
+            new OnlyPositive,
             new IntRange(0, IntRange::MAX)
         );
 

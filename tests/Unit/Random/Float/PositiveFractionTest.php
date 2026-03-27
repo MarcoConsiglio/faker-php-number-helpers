@@ -27,6 +27,7 @@ class PositiveFractionTest extends GeneratorTest
         // Arrange
         $generator = new PositiveFraction(
             $this->faker,
+            new OnlyPositiveFractions,
             new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
         );
 

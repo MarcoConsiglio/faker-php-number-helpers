@@ -16,12 +16,12 @@ class NegativeFraction extends Generator
                 abs($this->range->end),
                 abs($this->range->start)
             );
-        } while (Validator::hasNoFraction($number));
+        } while ($this->validator->hasNoFraction($number));
         return -$number;
     }
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyNegativeFractions);
+        $this->range->validate($this->validator);
     }
 }

@@ -26,6 +26,7 @@ class NegativeFractionTest extends GeneratorTest
         // Arrange
         $generator = new NegativeFraction(
             $this->faker,
+            new OnlyNegativeFractions,
             new FloatRange(FloatRange::MIN_FRACTION, -FloatRange::MICRO)
         );
 

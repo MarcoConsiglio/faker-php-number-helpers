@@ -17,6 +17,6 @@ class PositiveExceptZero extends Generator
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyPositiveExceptZero);
+        $this->range->validate($this->validator);
     }
 }

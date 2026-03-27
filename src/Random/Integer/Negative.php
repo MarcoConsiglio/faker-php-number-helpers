@@ -15,6 +15,6 @@ class Negative extends Generator
 
     protected function validate(): void
     {
-        $this->range->validate(new OnlyNegative);
+        $this->range->validate($this->validator);
     }
 }
