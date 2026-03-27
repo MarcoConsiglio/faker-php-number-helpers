@@ -25,14 +25,6 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as Re
 trait WithFakerHelpers
 {
     /**
-     * The maximum `float` value that can still have a fractional part. This 
-     * value is based on a 64 bit `float`.
-     * 
-     * @see https://float.exposed/0x432ffffffffffffe
-     */
-    public const float STRICT_FLOAT_MAX = 4503599627370495;
-
-    /**
      * The FakerPHP random generator.
      */
     protected static Generator $faker;
