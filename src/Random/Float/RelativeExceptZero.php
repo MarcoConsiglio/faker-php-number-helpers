@@ -20,7 +20,7 @@ class RelativeExceptZero extends Generator
                 $this->generator,
                 $this->range
             )->generate($precision);
-        if ($this->generator->boolean)
+        if ($this->generator->boolean())
             return new PositiveExceptZero(
                 $this->generator,
                 new FloatRange(FloatRange::MICRO, $this->range->end)

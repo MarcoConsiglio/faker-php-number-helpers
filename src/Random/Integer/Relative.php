@@ -14,7 +14,7 @@ class Relative extends Generator
         if (Validator::areBothNegative($this->range->start, $this->range->end))
             return new Negative($this->generator, $this->range)->generate();
         $this->validate();
-        if ($this->generator->boolean)
+        if ($this->generator->boolean())
             return new Positive(
                 $this->generator, 
                 new IntRange(0, $this->range->end)

@@ -14,7 +14,7 @@ class RelativeFraction extends Generator
             return new PositiveFraction($this->generator, $this->range)->generate($precision);
         if (Validator::areBothNegative($this->range->start, $this->range->end))
             return new NegativeFraction($this->generator, $this->range)->generate($precision);
-        if ($this->generator->boolean)
+        if ($this->generator->boolean())
             return new PositiveFraction(
                 $this->generator, 
                 new FloatRange(FloatRange::MICRO, $this->range->end)

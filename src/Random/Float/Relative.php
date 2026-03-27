@@ -14,7 +14,7 @@ class Relative extends Generator
             return new Positive($this->generator, $this->range)->generate($precision);
         if (Validator::areBothNegative($this->range->start, $this->range->end))
             return new Negative($this->generator, $this->range)->generate($precision);
-        if ($this->generator->boolean)
+        if ($this->generator->boolean())
             return new Positive(
                 $this->generator, 
                 new FloatRange(0, $this->range->end)

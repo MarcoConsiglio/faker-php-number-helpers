@@ -14,7 +14,7 @@ class RelativeExceptZero extends Generator
             return new PositiveExceptZero($this->generator, $this->range)->generate();
         if (Validator::areBothNegative($this->range->start, $this->range->end))
             return new Negative($this->generator, $this->range)->generate();
-        if ($this->generator->boolean)
+        if ($this->generator->boolean())
             return new PositiveExceptZero(
                 $this->generator, 
                 new IntRange(1, $this->range->end)
