@@ -81,9 +81,8 @@ class RelativeTest extends GeneratorTest
          * Positive outcome
          */
         // Arrange
-        $this->injectFakerMock($this->trickFakerToGetTrueOut());
         $generator = new Relative(
-            $this->faker,
+            $this->trickFakerToGetTrueOut(),
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 
@@ -99,9 +98,8 @@ class RelativeTest extends GeneratorTest
          * Negative outcome
          */
         // Arrange
-        $this->injectFakerMock($this->trickFakerToGetFalseOut());
         $generator = new Relative(
-            $this->faker,
+            $this->trickFakerToGetFalseOut(),
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 

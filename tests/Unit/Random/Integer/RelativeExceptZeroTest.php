@@ -69,9 +69,8 @@ class RelativeExceptZeroTest extends GeneratorTest
          * Positive outcome
          */
         // Arrange
-        $this->injectFakerMock($this->trickFakerToGetTrueOut());
         $generator = new RelativeExceptZero(
-            $this->faker,
+            $this->trickFakerToGetTrueOut(),
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 
@@ -87,9 +86,8 @@ class RelativeExceptZeroTest extends GeneratorTest
          * Negative outcome
          */
         // Arrange
-        $this->injectFakerMock($this->trickFakerToGetFalseOut());
         $generator = new RelativeExceptZero(
-            $this->faker,
+            $this->trickFakerToGetFalseOut(),
             new IntRange(IntRange::MIN, IntRange::MAX)
         );
 

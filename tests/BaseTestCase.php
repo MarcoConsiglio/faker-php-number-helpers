@@ -57,11 +57,6 @@ abstract class BaseTestCase extends TestCase
         $this->assertNotEquals(round($actual, 0, RoundingMode::HalfTowardsZero), $actual);
     }
 
-    protected function injectFakerMock(Generator $generator): void
-    {
-        $this->faker = $generator;
-    }
-
     /**
      * Replace the `Faker\Generator` implementetion with one that return `true`
      * every time the `$boolean()` property is called.
