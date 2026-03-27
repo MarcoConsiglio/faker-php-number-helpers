@@ -8,11 +8,10 @@ class NegativeExceptZero extends Generator
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
-        return $this->generator->randomFloat(
-            $this->normalizePrecision($precision),
-            $this->range->start,
-            $this->range->end
-        );
+        return new Negative(
+            $this->generator, 
+            $this->range
+        )->generate($precision);
     }
 
     protected function validate(): void

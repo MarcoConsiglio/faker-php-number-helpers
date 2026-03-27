@@ -2,9 +2,10 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\GeneratorTest;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Negative;
+use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
@@ -16,6 +17,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[CoversClass(NegativeExceptZero::class)]
 #[UsesClass(FloatRange::class)]
 #[UsesClass(Negative::class)]
+#[UsesClass(OnlyNegative::class)]
 #[UsesClass(OnlyNegativeExceptZero::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
