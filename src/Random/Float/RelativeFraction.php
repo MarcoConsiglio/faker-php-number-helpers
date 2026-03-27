@@ -7,7 +7,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 class RelativeFraction extends Generator
 {
-    public function generate(int $precision): float
+    public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
         if (Validator::areBothPositive($this->range->start, $this->range->end))

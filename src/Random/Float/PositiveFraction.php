@@ -6,7 +6,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 class PositiveFraction extends Generator
 {
-    public function generate(int $precision): float
+    public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
         $precision = $this->normalizePrecision($precision);

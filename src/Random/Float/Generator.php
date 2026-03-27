@@ -8,9 +8,11 @@ use Faker\Generator as FakerGenerator;
 abstract class Generator extends RandomGenerator
 {
     public function __construct(
-        protected FakerGenerator &$generator, 
+        FakerGenerator &$generator, 
         protected FloatRange $range
-    ) {}
+    ) {
+        parent::__construct($generator);
+    }
 
     abstract public function generate(int $precision): float;
 

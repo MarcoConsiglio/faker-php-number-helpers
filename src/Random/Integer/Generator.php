@@ -8,9 +8,11 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Generator as RandomGenerator;
 abstract class Generator extends RandomGenerator
 {
     public function __construct(
-        protected FakerGenerator &$generator, 
+        FakerGenerator &$generator, 
         protected IntRange $range
-    ) {}
+    ) {
+        parent::__construct($generator);
+    }
 
     abstract public function generate(): int;
 
