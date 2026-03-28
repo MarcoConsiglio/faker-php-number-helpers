@@ -10,14 +10,15 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatVali
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[TestDox("The Negative random float generator")]
 #[CoversClass(Negative::class)]
-#[CoversClass(FloatRange::class)]
-#[CoversClass(NegativeValidator::class)]
-#[CoversClass(OnlyNegative::class)]
-#[CoversClass(FloatValidator::class)]
-#[CoversClass(Validator::class)]
+#[UsesClass(FloatRange::class)]
+#[UsesClass(NegativeValidator::class)]
+#[UsesClass(OnlyNegative::class)]
+#[UsesClass(FloatValidator::class)]
+#[UsesClass(Validator::class)]
 class NegativeTest extends GeneratorTest
 {
     #[TestDox("generates a negative float.")]
