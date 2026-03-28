@@ -4,8 +4,15 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositiveExceptZero;
+
+/**
+ * A random relative non-null `int` number generator.
+ */
 class RelativeExceptZero extends Generator
 {
+    /**
+     * Generate a random `int` number.
+     */
     public function generate(): int
     {
         $this->validate();
@@ -35,6 +42,9 @@ class RelativeExceptZero extends Generator
             )->generate();
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate($this->validator);

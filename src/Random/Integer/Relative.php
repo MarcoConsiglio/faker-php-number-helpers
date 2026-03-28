@@ -6,8 +6,14 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositive;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Relative as RelativeInteger;
 
+/**
+ * A random relative `int` number generator.
+ */
 class Relative extends Generator
 {
+    /**
+     * Generate a random `int` number.
+     */
     public function generate(): int
     {
         $this->validate();
@@ -38,6 +44,9 @@ class Relative extends Generator
             )->generate();
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate(new RelativeInteger);

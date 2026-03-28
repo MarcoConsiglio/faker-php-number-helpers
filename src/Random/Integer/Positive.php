@@ -1,10 +1,14 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositive;
-
+/**
+ * A random positive `int` number generator.
+ */
 class Positive extends Generator
 {
+    /**
+     * Generate a random `int` number.
+     */
     public function generate(): int
     {
         $this->validate();
@@ -14,6 +18,9 @@ class Positive extends Generator
         );
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate($this->validator);
