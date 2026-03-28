@@ -7,6 +7,7 @@ class PositiveExceptZero extends Generator
 {
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
+        $this->validate();
         return 
             new Positive(
                 $this->generator,

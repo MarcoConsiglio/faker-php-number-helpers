@@ -14,8 +14,11 @@ class NegativeExceptZero extends Generator
         )->generate($precision);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function validate(): void
     {
-        // $this->range->validate($this->validator);
+        $this->range->validate($this->validator);
     }
 }
