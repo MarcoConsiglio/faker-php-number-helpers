@@ -4,8 +4,6 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\RelativeFractions;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 class RelativeFraction extends Generator
 {

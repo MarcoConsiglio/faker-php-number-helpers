@@ -1,6 +1,7 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
+use Faker\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\GeneratorTest;
@@ -24,24 +25,48 @@ class PositiveFractionTest extends GeneratorTest
     #[TestDox("generates a positive float with fractional part.")]
     public function test_random_generation(): void
     {
+        /**
+         * More than one try.
+         */
         // Arrange
+        $faker_mock = $this->createMock(Generator::class);
+        $faker_mock
+            ->expects($this->exactly(2))
+            ->method("randomFloat")
+            ->willReturn(5.0, 5.5);
         $generator = new PositiveFraction(
-            $this->faker,
+            $faker_mock,
             new OnlyPositiveFractions,
             new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
         );
 
-        // Act many times to hit the while condition
-        $number = $generator->generate();
-        $number = $generator->generate();
-        $number = $generator->generate();
-        $number = $generator->generate();
-        $number = $generator->generate();
-        $number = $generator->generate();
+        // Act
         $number = $generator->generate();
 
         // Assert
         $this->assertIsFloat($number);
-        $this->assertGreaterThan(0, $number);
+        $this->assertSame(5.5, $number);
+
+        /**
+         * Just one try.
+         */
+        // Arrange
+        $faker_mock = $this->createMock(Generator::class);
+        $faker_mock
+            ->expects($this->exactly(1))
+            ->method("randomFloat")
+            ->willReturn(5.5);
+        $generator = new PositiveFraction(
+            $faker_mock,
+            new OnlyPositiveFractions,
+            new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
+        );
+
+        // Act
+        $number = $generator->generate();
+
+        // Assert
+        $this->assertIsFloat($number);
+        $this->assertSame(5.5, $number);
     }
 }

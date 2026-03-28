@@ -4,7 +4,6 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 class RelativeExceptZero extends Generator
 {

@@ -5,7 +5,6 @@ use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyNegative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\OnlyPositive;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Relative as RelativeInteger;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
 class Relative extends Generator
 {
