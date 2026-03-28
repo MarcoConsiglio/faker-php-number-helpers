@@ -1,11 +1,14 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
-
+/**
+ * The negative random `float` fraction number generator. 
+ */
 class NegativeFraction extends Generator
 {
+    /**
+     * Generate a `float` number with `$precision` decimal places.
+     */
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
@@ -20,6 +23,9 @@ class NegativeFraction extends Generator
         return -$number;
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate($this->validator);

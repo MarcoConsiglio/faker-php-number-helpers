@@ -5,8 +5,14 @@ use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
 
+/**
+ * The relative random `float` fraction number generator. 
+ */
 class RelativeFraction extends Generator
 {
+    /**
+     * Generate a `float` number with `$precision` decimal places.
+     */
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
@@ -36,6 +42,9 @@ class RelativeFraction extends Generator
             )->generate($precision);
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate($this->validator);

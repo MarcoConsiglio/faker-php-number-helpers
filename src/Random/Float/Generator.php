@@ -6,8 +6,14 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Generator as RandomGenerator;
 use Faker\Generator as FakerGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 
+/**
+ * A random `float` number generator.
+ */
 abstract class Generator extends RandomGenerator
 {
+    /**
+     * Contruct the `Generator`.
+     */
     public function __construct(
         FakerGenerator $generator,
         Validator $validator, 
@@ -16,8 +22,14 @@ abstract class Generator extends RandomGenerator
         parent::__construct($generator, $validator);
     }
 
+    /**
+     * Generate a `float` number with `$precision` decimal places.
+     */
     abstract public function generate(int $precision): float;
 
+    /**
+     * Validate the random range.
+     */
     abstract protected function validate(): void;
 
     /**

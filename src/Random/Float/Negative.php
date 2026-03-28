@@ -1,10 +1,14 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative;
-
+/**
+ *  The negative random `float` number generator. 
+ */
 class Negative extends Generator
 {
+    /**
+     * Generate a `float` number with `$precision` decimal places.
+     */
     public function generate(int $precision = PHP_FLOAT_DIG): float
     {
         $this->validate();
@@ -15,6 +19,9 @@ class Negative extends Generator
         );
     }
 
+    /**
+     * Validate the random range.
+     */
     protected function validate(): void
     {
         $this->range->validate($this->validator);
