@@ -20,9 +20,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\PositiveExceptZero as Po
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\Relative as RelativeInteger;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Integer\RelativeExceptZero as RelativeIntegerExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
-use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Stubs\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative as OnlyNegativeFloatValidator;
-use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeExceptZero as OnlyNegativeFloatExceptZeroValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions as OnlyNegativeFractionsValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositive as OnlyPositiveFloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero as OnlyPositiveFloatExceptZeroValidator;
@@ -39,13 +37,10 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\RelativeExceptZero a
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Validator as IntegerValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
 use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
-use Override;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\Attributes\UsesClass;
-use PHPUnit\Framework\MockObject\Runtime\PropertyHook;
-use PHPUnit\Framework\MockObject\Stub;
 
 #[TestDox("The WithFakerHelpers trait")]
 #[CoversTrait(WithFakerHelpers::class)]
@@ -78,7 +73,6 @@ use PHPUnit\Framework\MockObject\Stub;
 #[UsesClass(OnlyPositiveFloatValidator::class)]
 #[UsesClass(OnlyNegativeFloatValidator::class)]
 #[UsesClass(RelativeFloatValidator::class)]
-#[UsesClass(OnlyNegativeFloatExceptZeroValidator::class)]
 #[UsesClass(OnlyPositiveFloatExceptZeroValidator::class)]
 #[UsesClass(RelativeFloatExceptZeroValidator::class)]
 #[UsesClass(OnlyPositiveFractionsValidator::class)]

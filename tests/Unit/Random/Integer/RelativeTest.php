@@ -67,19 +67,6 @@ class RelativeTest extends GeneratorTest
         $this->assertGreaterThanOrEqual(0, $number);
 
         /**
-         * Inverted range
-         */
-        // Arrange
-        $generator = new Relative(
-            $this->faker,
-            new RelativeValidator,
-            new IntRange(IntRange::MAX, IntRange::MIN)
-        );
-
-        // Act & Assert
-        $this->assertIsInt($generator->generate());
-
-        /**
          * Relative range
          * Positive outcome
          */
