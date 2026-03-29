@@ -1,8 +1,9 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
-
+/**
+ * The positive `float` range validator.
+ */
 class OnlyPositive extends Positive
 {
     public function validate(float &$min, float &$max): void

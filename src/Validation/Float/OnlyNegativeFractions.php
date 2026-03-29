@@ -4,6 +4,9 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use Override;
 
+/**
+ * The negative `float` fractions range validator.
+ */
 class OnlyNegativeFractions extends Negative
 {
     public function validate(float &$min, float &$max): void

@@ -3,6 +3,9 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation;
 
 use RoundingMode;
 
+/**
+ * A random range `Validator`.
+ */
 abstract class Validator
 {
     /**

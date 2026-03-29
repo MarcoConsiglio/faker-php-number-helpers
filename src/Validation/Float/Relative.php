@@ -3,6 +3,9 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 
+/**
+ * The relative `float` range validator.
+ */
 class Relative extends Validator
 {
     public function validate(float &$min, float &$max): void

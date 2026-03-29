@@ -3,6 +3,9 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 
+/**
+ * A positive `float` range validator.
+ */
 abstract class Positive extends Validator
 {
     protected function avoidNotAllowedFloats(float &$min, float &$max): void

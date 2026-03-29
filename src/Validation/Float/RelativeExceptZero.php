@@ -1,6 +1,9 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
+/**
+ * The relative non-null `float` range validator.
+ */
 class RelativeExceptZero extends Relative
 {
     public function validate(float &$min, float &$max): void

@@ -1,8 +1,9 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
-
+/**
+ * The negative `float` range validator.
+ */
 class OnlyNegative extends Negative
 {
     public function validate(float &$min, float &$max): void
