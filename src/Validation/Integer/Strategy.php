@@ -2,9 +2,12 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
 /**
- * The idea of a validation strategy.
+ * An `int` validation strategy.
  */
 interface Strategy
 {
+    /**
+     * Validate the range.
+     */
     public function validate(int &$min, int &$max): void;
 }

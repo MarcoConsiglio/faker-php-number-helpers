@@ -3,8 +3,14 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 
+/**
+ * The negative `float` validator.
+ */
 class OnlyNegative extends Validator
 {
+    /**
+     * Validate the range.
+     */
     public function validate(int &$min, int &$max): void
     {
         $this->avoidIntMin($min);

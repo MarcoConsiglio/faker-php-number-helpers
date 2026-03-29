@@ -2,7 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 /**
- * A validation strategy.
+ * A `float` validation strategy.
  */
 interface Strategy
 {
