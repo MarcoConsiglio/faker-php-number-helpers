@@ -9,6 +9,9 @@ use Override;
  */
 class OnlyPositiveExceptZero extends Positive
 {
+    /**
+     * Validate the range.
+     */
     public function validate(float &$min, float &$max): void
     {
         $this->avoidNotAllowedFloats($min, $max);
@@ -16,6 +19,9 @@ class OnlyPositiveExceptZero extends Positive
         $this->swap($min, $max);
     }
 
+    /**
+     * Avoid the negative extremes of the range.
+     */
     #[Override]
     protected function avoidNegativeFloats(float &$min, float &$max): void
     {
@@ -23,6 +29,9 @@ class OnlyPositiveExceptZero extends Positive
         if ($this->lessThanOrEqual($max, 0.0)) $this->setStandardMax($max);
     }
 
+    /**
+     * Set the standard lower extreme.
+     */
     #[Override]
     protected function setStandardMin(float &$min): void
     {

@@ -6,5 +6,8 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
  */
 interface Strategy
 {
+    /**
+     * Validate the range.
+     */
     public function validate(float &$min, float &$max): void;
 }

@@ -6,6 +6,9 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
  */
 class OnlyPositive extends Positive
 {
+    /**
+     * Validate the range.
+     */
     public function validate(float &$min, float &$max): void
     {
         $this->avoidNotAllowedFloats($min, $max);

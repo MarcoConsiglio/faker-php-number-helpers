@@ -9,6 +9,9 @@ use Override;
  */
 class OnlyNegativeFractions extends Negative
 {
+    /**
+     * Validate the range.
+     */
     public function validate(float &$min, float &$max): void
     {
         $this->avoidNotAllowedFloats($min, $max);
@@ -20,6 +23,9 @@ class OnlyNegativeFractions extends Negative
         $this->swap($min, $max);
     }  
 
+    /**
+     * Set the standard lower extreme.
+     */
     #[Override]
     protected function setStandardMin(float &$min): void
     {

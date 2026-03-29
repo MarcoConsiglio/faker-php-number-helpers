@@ -9,6 +9,9 @@ use Override;
  */
 class RelativeFractions extends Relative
 {
+    /**
+     * Validate the range.
+     */
     public function validate(float &$min, float &$max): void
     {
         $this->avoidNotAllowedFloats($min, $max);
@@ -19,12 +22,18 @@ class RelativeFractions extends Relative
         $this->swap($min, $max);
     }
 
+    /**
+     * Set the standard lower extreme.
+     */
     #[Override]
     protected function setStandardMin(float &$min): void
     {
         $min = FloatRange::MIN_FRACTION;
     }
 
+    /**
+     * Set the standard higher extreme.
+     */
     #[Override]
     protected function setStandardMax(float &$max): void
     {
