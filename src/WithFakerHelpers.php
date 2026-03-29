@@ -53,6 +53,9 @@ trait WithFakerHelpers
             self::$faker = Factory::create(Factory::DEFAULT_LOCALE);
     }
 
+    /**
+     * Inject the random `$generator`.
+     */
     protected static function injectFaker(Generator $generator): void
     {
         self::$faker = $generator;

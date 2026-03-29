@@ -29,6 +29,9 @@ class IntRange
         public protected(set) int $end
     ) {}
 
+    /**
+     * Validate this `IntRange`.
+     */
     public function validate(IntegerValidator $validator): void
     {
         $validator->validate($this->start, $this->end);

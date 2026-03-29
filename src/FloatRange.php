@@ -4,7 +4,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 
 /**
- * A decimal Range.
+ * A `float` Range.
  */
 class FloatRange
 {
@@ -48,6 +48,9 @@ class FloatRange
         public protected(set) float $end
     ) {}
 
+    /**
+     * Validate this `FloatRange`.
+     */
     public function validate(FloatValidator $validator): void
     {
         $validator->validate($this->start, $this->end);
