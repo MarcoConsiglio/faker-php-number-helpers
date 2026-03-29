@@ -14,6 +14,7 @@
             <source dsn=".">
                 <path>src</path>
             </source>
+            <visibility>public</visibility>
             <visibility>protected</visibility>
             <default-package-name>FakerPhpNumberHelpers</default-package-name>
             <include-source>false</include-source>

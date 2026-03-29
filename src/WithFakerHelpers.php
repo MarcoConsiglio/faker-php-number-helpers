@@ -33,7 +33,7 @@ use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\RelativeExceptZero a
 
 /**
  * FakerPHP support trait that provides helper functions to easily generate 
- * random numbers inside PHPUnit data providers.
+ * random numbers.
  */
 trait WithFakerHelpers
 {

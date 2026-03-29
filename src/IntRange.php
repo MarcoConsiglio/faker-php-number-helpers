@@ -4,17 +4,21 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer\Validator as IntegerValidator;
 
 /**
- * An integer Range.
+ * An `int` range.
  */
 class IntRange
 {
     /**
      * The maximum number allowed.
+     * 
+     * @var int MAX
      */
     public const int MAX = PHP_INT_MAX;
 
     /**
      * The minimum number allowed.
+     * 
+     * @var int MIN
      */
     public const int MIN = PHP_INT_MIN + 1;
 

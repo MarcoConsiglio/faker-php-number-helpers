@@ -104,7 +104,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -153,6 +153,13 @@ random numbers.</p>
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_injectFaker">injectFaker()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Inject the random `$generator`.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeNonZeroRandomFloat">negativeNonZeroRandomFloat()</a>
     <span>
                                 &nbsp;: float    </span>
@@ -174,7 +181,7 @@ random numbers.</p>
 <dd>Return a negative random float.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloatStrict">negativeRandomFloatStrict()</a>
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFraction">negativeRandomFraction()</a>
     <span>
                                 &nbsp;: float    </span>
 </dt>
@@ -223,7 +230,7 @@ random numbers.</p>
 <dd>Return a positive random float.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloatStrict">positiveRandomFloatStrict()</a>
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFraction">positiveRandomFraction()</a>
     <span>
                                 &nbsp;: float    </span>
 </dt>
@@ -244,7 +251,7 @@ random numbers.</p>
 <dd>Return a random relative float.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFloatStrict">randomFloatStrict()</a>
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFraction">randomFraction()</a>
     <span>
                                 &nbsp;: float    </span>
 </dt>
@@ -283,7 +290,7 @@ random numbers.</p>
             phpdocumentor-element
             -property
             -protected
-                                                                    "
+            -static                                                        "
 >
     <h4 class="phpdocumentor-element__name" id="property_faker">
         $faker
@@ -295,7 +302,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
@@ -304,7 +311,7 @@ random numbers.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\Faker\Generator">Generator</abbr></span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><abbr title="\Faker\Generator">Generator</abbr></span>
     <span class="phpdocumentor-signature__name">$faker</span>
     </code>
 
@@ -328,7 +335,52 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_injectFaker">
+        injectFaker()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_injectFaker" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Inject the random `$generator`.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">injectFaker</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\Faker\Generator">Generator</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$generator</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$generator</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\Faker\Generator">Generator</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_negativeNonZeroRandomFloat">
         negativeNonZeroRandomFloat()
@@ -338,7 +390,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -346,7 +398,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">negativeNonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">negativeNonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -357,7 +409,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -391,7 +443,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_negativeNonZeroRandomInteger">
         negativeNonZeroRandomInteger()
@@ -401,7 +453,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -409,7 +461,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">negativeNonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">negativeNonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -447,7 +499,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_negativeRandomFloat">
         negativeRandomFloat()
@@ -457,7 +509,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
@@ -465,7 +517,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">negativeRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">negativeRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -476,7 +528,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -510,17 +562,17 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_negativeRandomFloatStrict">
-        negativeRandomFloatStrict()
-        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloatStrict" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_negativeRandomFraction">
+        negativeRandomFraction()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFraction" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
@@ -528,7 +580,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">negativeRandomFloatStrict</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">negativeRandomFraction</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -539,7 +591,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">-<a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -573,7 +625,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_negativeRandomInteger">
         negativeRandomInteger()
@@ -583,7 +635,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
@@ -591,7 +643,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">negativeRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">negativeRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -629,7 +681,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_nonZeroRandomFloat">
         nonZeroRandomFloat()
@@ -639,7 +691,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 
     </aside>
 
@@ -647,7 +699,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">nonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">nonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -658,14 +710,14 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -692,7 +744,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_nonZeroRandomInteger">
         nonZeroRandomInteger()
@@ -702,7 +754,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -710,7 +762,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">nonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">nonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr> + 1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -748,7 +800,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_positiveNonZeroRandomFloat">
         positiveNonZeroRandomFloat()
@@ -758,7 +810,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -766,7 +818,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">positiveNonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">positiveNonZeroRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -784,7 +836,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -811,7 +863,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_positiveNonZeroRandomInteger">
         positiveNonZeroRandomInteger()
@@ -821,7 +873,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -829,7 +881,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">positiveNonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">positiveNonZeroRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -867,7 +919,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_positiveRandomFloat">
         positiveRandomFloat()
@@ -877,7 +929,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 
     </aside>
 
@@ -885,7 +937,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">positiveRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">positiveRandomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -903,7 +955,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -930,17 +982,17 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_positiveRandomFloatStrict">
-        positiveRandomFloatStrict()
-        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloatStrict" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_positiveRandomFraction">
+        positiveRandomFraction()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFraction" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -948,7 +1000,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">positiveRandomFloatStrict</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">positiveRandomFraction</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -966,7 +1018,7 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -993,7 +1045,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_positiveRandomInteger">
         positiveRandomInteger()
@@ -1003,7 +1055,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -1011,7 +1063,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">positiveRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">positiveRandomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1049,7 +1101,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_randomFloat">
         randomFloat()
@@ -1059,7 +1111,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
@@ -1067,7 +1119,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">randomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">randomFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1078,14 +1130,14 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MIN"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MIN">FloatRange::MIN</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_MAX">PHP_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX">FloatRange::MAX</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1112,17 +1164,17 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_randomFloatStrict">
-        randomFloatStrict()
-        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFloatStrict" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_randomFraction">
+        randomFraction()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFraction" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -1130,7 +1182,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">randomFloatStrict</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">randomFraction</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-<a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_FLOAT_DIG">PHP_FLOAT_DIG</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1141,14 +1193,14 @@ random numbers.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$min</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">-<abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">-<a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$max</span>
                 : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\self::STRICT_FLOAT_MAX">self::STRICT_FLOAT_MAX</abbr></span>            </dt>
+                 = <span class="phpdocumentor-argument-list__argument__default-value"><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-FloatRange.html#constant_MAX_FRACTION"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\FloatRange::MAX_FRACTION">FloatRange::MAX_FRACTION</abbr></a></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1175,7 +1227,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_randomInteger">
         randomInteger()
@@ -1185,7 +1237,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1193,7 +1245,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">randomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">randomInteger</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MIN">PHP_INT_MIN</abbr></span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\MarcoConsiglio\FakerPhpNumberHelpers\PHP_INT_MAX">PHP_INT_MAX</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1231,7 +1283,7 @@ random numbers.</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_setUpFaker">
         setUpFaker()
@@ -1241,7 +1293,7 @@ random numbers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/WithFakerHelpers.php"><a href="files/src-withfakerhelpers.html"><abbr title="src/WithFakerHelpers.php">WithFakerHelpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -1249,7 +1301,7 @@ random numbers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">setUpFaker</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">setUpFaker</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1396,20 +1448,21 @@ random numbers.</p>
                                     <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_injectFaker">injectFaker()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeNonZeroRandomFloat">negativeNonZeroRandomFloat()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeNonZeroRandomInteger">negativeNonZeroRandomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloat">negativeRandomFloat()</a></li>
-                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFloatStrict">negativeRandomFloatStrict()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomFraction">negativeRandomFraction()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_negativeRandomInteger">negativeRandomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_nonZeroRandomFloat">nonZeroRandomFloat()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_nonZeroRandomInteger">nonZeroRandomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveNonZeroRandomFloat">positiveNonZeroRandomFloat()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveNonZeroRandomInteger">positiveNonZeroRandomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloat">positiveRandomFloat()</a></li>
-                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFloatStrict">positiveRandomFloatStrict()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomFraction">positiveRandomFraction()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_positiveRandomInteger">positiveRandomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFloat">randomFloat()</a></li>
-                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFloatStrict">randomFloatStrict()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomFraction">randomFraction()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_randomInteger">randomInteger()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_setUpFaker">setUpFaker()</a></li>
                                     </ul>
