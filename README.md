@@ -65,13 +65,13 @@ In some tests, you'll need a PHPUnit data provider, which is a static function. 
 <?php
 namespace MyCompany\Project\Tests\Unit;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\WithStaticFakerHelpers;
+use MarcoConsiglio\FakerPhpNumberHelpers\WithFakerHelpers;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class MyUnitTestCase extends TestCase
 {
-    use WithStaticFakerHelpers;
+    use WithFakerHelpers;
 
     /**
      * This won't work as this method is called after
@@ -101,11 +101,15 @@ class MyUnitTestCase extends TestCase
 ```
 # Constants
 Several constants provide the limit for random generation.
-## Integer
+## Integers
 | Constant | Value |
 | :---: | :---: |
 | `IntRange::MIN` | `PHP_INT_MIN + 1` |
 | `IntRange::MAX` | `PHP_INT_MAX` |
+
+## Floats
+| Constant | Value |
+| :---: | :---: |
 | `FloatRange::MIN` | `-PHP_FLOAT_MAX` |
 | `FloatRange::MAX` | `PHP_FLOAT_MAX` |
 | `FloatRange::MICRO` | `PHP_FLOAT_MIN` |
