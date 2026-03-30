@@ -10,14 +10,15 @@
          displayDetailsOnTestsThatTriggerWarnings="true"
          displayDetailsOnTestsThatTriggerErrors="true"
          colors="true"
-         cacheDirectory=".phpunit.cache">
+         cacheDirectory=".phpunit.cache"
+         displayDetailsOnTestsThatTriggerDeprecations="true">
     <testsuites>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
         </testsuite>
-        <!-- <testsuite name="Feature">
+        <testsuite name="Feature">
             <directory>tests/Feature</directory>
-        </testsuite> -->
+        </testsuite>
     </testsuites>
     <source>
         <include>

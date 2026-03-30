@@ -1,4 +1,17 @@
 # Changelog
+## v4.0.0 2026-03-30
+### Added
+- Default `$locale` parameter of the `WithFakerHelpers::setUpFaker()` method.
+- `IntRange` class to represent an `int` range.
+- `FloatRange` class to represent a `float` range.
+### Changed
+- All methods and properties of `WithFakerHelpers` trait are now declared as `static`.
+- Renamed `WithFakerHelpers::randomFloatStrict()` method to `WithFakerHelpers::randomFraction()`.
+- Renamed `WithFakerHelpers::positiveRandomFloatStrict()` method to `WithFakerHelpers::positiveRandomFraction()`.
+- Renamed `WithFakerHelpers::negativeRandomFloatStrict()` method to `WithFakerHelpers::negativeRandomFraction()`.
+### Removed
+- `WithStaticFakerHelpers` trait, use `WithFakerHelpers` instead.
+
 ## v3.1.0 2026-03-22
 ### Added
 - `WithStaticFakerHelpers` trait to use FakerPHP inside static methods.
