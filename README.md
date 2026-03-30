@@ -1,10 +1,10 @@
 ![GitHub License](https://img.shields.io/github/license/MarcoConsiglio/faker-php-number-helpers)
 ![GitHub Release](https://img.shields.io/github/v/release/MarcoConsiglio/faker-php-number-helpers)
-![Static Badge](https://img.shields.io/badge/version-v3.1.0-white)
+![Static Badge](https://img.shields.io/badge/version-v4.0.0-white)
 <br>
 ![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Line%20coverage&labelColor=rgb(255%2C255%2C255))
-![Static Badge](https://img.shields.io/badge/96%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
-![Static Badge](https://img.shields.io/badge/84%25-rgb(193%2C148%2C6)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
+![Static Badge](https://img.shields.io/badge/100%25-rgb(40%2C%20167%2C%2069)?label=Branch%20coverage&labelColor=rgb(255%2C255%2C255))
+![Static Badge](https://img.shields.io/badge/99%25-rgb(40%2C%20167%2C%2069)?label=Path%20coverage&labelColor=rgb(255%2C255%2C255))
 
 # faker-php-number-helpers
 Adds a helper trait that makes it easier to generate random numbers using FakerPHP.
@@ -46,8 +46,9 @@ class MyUnitTestCase extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        // Set up faker before using the methods in the trait.
-        $this->setUpFaker();
+        // Set up faker before using the methods in the trait
+        // with your needed locale.
+        $this->setUpFaker("en_GB");
     }
 
     public function test_example(): void
