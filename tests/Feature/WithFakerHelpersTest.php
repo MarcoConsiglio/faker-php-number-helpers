@@ -186,7 +186,7 @@ class WithFakerHelpersTest extends BaseTestCase
          * Positive outcome
          */
         // Arrange
-        $this->injectFaker($this->trickFakerToGetTrueOut());
+        self::$faker = $this->trickFakerToGetTrueOut();
 
         // Act
         $number = $this->randomFloat();
@@ -201,7 +201,7 @@ class WithFakerHelpersTest extends BaseTestCase
          * Negative outcome
          */
         // Arrange
-        $this->injectFaker($this->trickFakerToGetFalseOut());
+        self::$faker = $this->trickFakerToGetFalseOut();
 
         // Act
         $number = $this->randomFloat();

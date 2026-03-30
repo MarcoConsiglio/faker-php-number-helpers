@@ -47,18 +47,10 @@ trait WithFakerHelpers
      * 
      * @codeCoverageIgnore
      */
-    protected static function setUpFaker(): void
+    protected static function setUpFaker(string $locale = Factory::DEFAULT_LOCALE): void
     {
         if (! isset(self::$faker))
-            self::$faker = Factory::create(Factory::DEFAULT_LOCALE);
-    }
-
-    /**
-     * Inject the random `$generator`.
-     */
-    protected static function injectFaker(Generator $generator): void
-    {
-        self::$faker = $generator;
+            self::$faker = Factory::create($locale);
     }
 
     /**
