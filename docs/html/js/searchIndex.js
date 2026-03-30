@@ -716,11 +716,6 @@ Search.appendIndex(
             "summary": "Set\u0020up\u0020the\u0020FakerPHP\u0020generator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_setUpFaker"
         },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003AinjectFaker\u0028\u0029",
-            "name": "injectFaker",
-            "summary": "Inject\u0020the\u0020random\u0020\u0060\u0024generator\u0060.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-WithFakerHelpers.html#method_injectFaker"
-        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers\u003A\u003ArandomInteger\u0028\u0029",
             "name": "randomInteger",
             "summary": "Return\u0020a\u0020random\u0020relative\u0020integer.",
