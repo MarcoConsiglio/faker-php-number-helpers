@@ -11,6 +11,8 @@
 - Renamed `WithFakerHelpers::negativeRandomFloatStrict()` method to `WithFakerHelpers::negativeRandomFraction()`.
 ### Removed
 - `WithStaticFakerHelpers` trait, use `WithFakerHelpers` instead.
+### Fixed
+- Bug [#7](https://github.com/MarcoConsiglio/faker-php-number-helpers/issues/7): *Infinite loop in nonZeroRandomInteger() method*.
 
 ## v3.1.0 2026-03-22
 ### Added
