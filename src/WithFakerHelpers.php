@@ -56,7 +56,7 @@ trait WithFakerHelpers
     /**
      * Return a random relative integer.
      */
-    protected static function randomInteger(int $min = PHP_INT_MIN, int $max = PHP_INT_MAX): int
+    protected static function randomInteger(int $min = IntRange::MIN, int $max = IntRange::MAX): int
     {
         return new RelativeInteger(
             self::$faker,
@@ -68,7 +68,7 @@ trait WithFakerHelpers
     /**
      * Return a positive random integer.
      */
-    protected static function positiveRandomInteger(int $min = 0, int $max = PHP_INT_MAX): int
+    protected static function positiveRandomInteger(int $min = 0, int $max = IntRange::MAX): int
     {
         return new PositiveInteger(
             self::$faker,
@@ -80,7 +80,7 @@ trait WithFakerHelpers
     /**
      * Return a negative random integer.
      */
-    protected static function negativeRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
+    protected static function negativeRandomInteger(int $min = IntRange::MIN, int $max = -1): int
     {
         return new NegativeInteger(
             self::$faker,
@@ -92,7 +92,7 @@ trait WithFakerHelpers
     /**
      * Return a positive random integer except for zero.
      */
-    protected static function positiveNonZeroRandomInteger(int $min = 1, int $max = PHP_INT_MAX): int
+    protected static function positiveNonZeroRandomInteger(int $min = 1, int $max = IntRange::MAX): int
     {
         return new PositiveIntegerExceptZero(
             self::$faker,
@@ -104,7 +104,7 @@ trait WithFakerHelpers
     /**
      * Return a negative random integer except for zero.
      */
-    protected static function negativeNonZeroRandomInteger(int $min = PHP_INT_MIN + 1, int $max = -1): int
+    protected static function negativeNonZeroRandomInteger(int $min = IntRange::MIN, int $max = -1): int
     {
         return self::negativeRandomInteger($min, $max);
     }
@@ -112,7 +112,7 @@ trait WithFakerHelpers
     /**
      * Return a random integer except for zero.
      */
-    protected static function nonZeroRandomInteger(int $min = PHP_INT_MIN + 1, int $max = PHP_INT_MAX): int
+    protected static function nonZeroRandomInteger(int $min = IntRange::MIN, int $max = IntRange::MAX): int
     {
         return new RelativeIntegerExceptZero(
             self::$faker,
