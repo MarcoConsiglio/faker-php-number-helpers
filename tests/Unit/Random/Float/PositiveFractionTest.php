@@ -3,6 +3,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use Faker\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\GeneratorTest;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
@@ -20,6 +21,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(Positive::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
+#[UsesClass(NextFloat::class)]
 class PositiveFractionTest extends GeneratorTest
 {
     #[TestDox("generates a positive float with fractional part.")]
@@ -37,7 +39,7 @@ class PositiveFractionTest extends GeneratorTest
         $generator = new PositiveFraction(
             $faker_mock,
             new OnlyPositiveFractions,
-            new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
+            new FloatRange(NextFloat::afterZero(), FloatRange::MAX_FRACTION)
         );
 
         // Act
@@ -59,7 +61,7 @@ class PositiveFractionTest extends GeneratorTest
         $generator = new PositiveFraction(
             $faker_mock,
             new OnlyPositiveFractions,
-            new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
+            new FloatRange(NextFloat::afterZero(), FloatRange::MAX_FRACTION)
         );
 
         // Act

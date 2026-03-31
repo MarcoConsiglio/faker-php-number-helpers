@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive as Positive;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Relative;
@@ -30,6 +31,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(NegativeValidator::class)]
 #[UsesClass(OnlyNegative::class)]
 #[UsesClass(Validator::class)]
+#[UsesClass(NextFloat::class)]
 class RelativeTest extends GeneratorTest
 {
     #[TestDox("generates a relative float.")]
@@ -61,7 +63,7 @@ class RelativeTest extends GeneratorTest
         $generator = new Relative(
             $this->faker,
             new RelativeValidator,
-            new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
+            new FloatRange(FloatRange::MIN, NextFloat::beforeZero())
         );
 
         // Act

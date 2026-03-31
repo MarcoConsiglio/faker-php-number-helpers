@@ -2,13 +2,16 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Validation\Flaot;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegative;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[TestDox("The OnlyNegative float validator")]
 #[CoversClass(OnlyNegative::class)]
+#[UsesClass(NextFloat::class)]
 class OnlyNegativeTest extends BaseTestCase
 {
     #[TestDox("allows only negative floats.")]
@@ -28,7 +31,7 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(FloatRange::MIN, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
 
         /**
          * $min = -INF
@@ -58,7 +61,7 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(FloatRange::MIN, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
 
         /**
          * $min < 0
@@ -73,7 +76,7 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(-5.7, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
 
         /**
          * $min ≥ 0
@@ -88,7 +91,7 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(FloatRange::MIN, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);    
+        $this->assertSame(NextFloat::beforeZero(), $max);    
         
         /**
          * $min < 0
@@ -133,7 +136,7 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(-5.3, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
 
         /**
          * $min ≥ 0
@@ -148,6 +151,6 @@ class OnlyNegativeTest extends BaseTestCase
 
         // Assert
         $this->assertSame(FloatRange::MIN, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
     }
 }

@@ -23,20 +23,13 @@ class FloatRange
     public const float MIN = -PHP_FLOAT_MAX;
 
     /**
-     * The smallest normal number in floating point.
-     * 
-     * @var float MICRO
-     */
-    public const float MICRO = PHP_FLOAT_MIN;
-
-    /**
      * The maximum `float` value that can still have a fractional part. This 
      * value is based on a 64 bit `float`.
      * 
      * @var float MAX_FRACTION
      * @see https://float.exposed/0x432ffffffffffffe
      */
-    public const float MAX_FRACTION = 4503599627370495;
+    public const float MAX_FRACTION = 4503599627370495.0;
 
     /**
      * The minimum `float` value that can still have a fractional part. This 

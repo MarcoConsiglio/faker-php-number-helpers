@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\PositiveFraction;
@@ -31,6 +32,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(RelativeFractions::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
+#[UsesClass(NextFloat::class)]
 class RelativeFractionTest extends GeneratorTest
 {
     #[TestDox("generates a relative float with fractional part")]
@@ -44,7 +46,7 @@ class RelativeFractionTest extends GeneratorTest
         $generator = new RelativeFraction(
             $this->faker,
             new RelativeFractions,
-            new FloatRange(FloatRange::MICRO, FloatRange::MAX_FRACTION)
+            new FloatRange(NextFloat::afterZero(), FloatRange::MAX_FRACTION)
         );
 
         // Act
@@ -62,7 +64,7 @@ class RelativeFractionTest extends GeneratorTest
         $generator = new RelativeFraction(
             $this->faker,
             new RelativeFractions,
-            new FloatRange(FloatRange::MIN_FRACTION, -FloatRange::MICRO)
+            new FloatRange(FloatRange::MIN_FRACTION, NextFloat::beforeZero())
         );
 
         // Act

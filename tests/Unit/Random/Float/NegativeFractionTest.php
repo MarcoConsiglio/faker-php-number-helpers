@@ -3,12 +3,14 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use Faker\Generator;
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeFraction;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\GeneratorTest;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Validator;
+use Nsfisis\NextAfter\NextAfter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\Attributes\TestDox;
@@ -22,6 +24,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(OnlyNegativeFractions::class)]
 #[UsesClass(FloatValidator::class)]
 #[UsesClass(Validator::class)]
+#[UsesClass(NextFloat::class)]
 class NegativeFractionTest extends GeneratorTest
 {
     #[TestDox("generates a float with a fractional part.")]
@@ -39,7 +42,7 @@ class NegativeFractionTest extends GeneratorTest
         $generator = new NegativeFraction(
             $faker_mock,
             new OnlyNegativeFractions,
-            new FloatRange(FloatRange::MIN_FRACTION, -FloatRange::MICRO)
+            new FloatRange(FloatRange::MIN_FRACTION, NextFloat::beforeZero())
         );
 
         // Act
@@ -61,7 +64,7 @@ class NegativeFractionTest extends GeneratorTest
         $generator = new NegativeFraction(
             $faker_mock,
             new OnlyNegativeFractions,
-            new FloatRange(FloatRange::MIN_FRACTION, -FloatRange::MICRO)
+            new FloatRange(FloatRange::MIN_FRACTION, NextFloat::beforeZero())
         );
 
         // Act

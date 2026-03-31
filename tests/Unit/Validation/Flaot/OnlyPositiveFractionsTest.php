@@ -2,13 +2,16 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Validation\Flaot;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[TestDox("The OnlyPositiveFractions float validator")]
 #[CoversClass(OnlyPositiveFractions::class)]
+#[UsesClass(NextFloat::class)]
 class OnlyPositiveFractionsTest extends BaseTestCase
 {
     #[TestDox("allows only positive floats with fractional part.")]
@@ -27,7 +30,7 @@ class OnlyPositiveFractionsTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(FloatRange::MAX_FRACTION, $max);
 
         /**
@@ -41,7 +44,7 @@ class OnlyPositiveFractionsTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(FloatRange::MAX_FRACTION, $max);
 
         /**
@@ -56,7 +59,7 @@ class OnlyPositiveFractionsTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(3.5, $max);
 
         /**
@@ -86,7 +89,7 @@ class OnlyPositiveFractionsTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(FloatRange::MAX_FRACTION, $max);
     }
 }
