@@ -1,4 +1,8 @@
 # Changelog
+## v4.1.0 2026-03-31
+### Added
+- `NextFloat` class to calculate the previous/next representable `float` number near another `float` number.
+
 ## v4.0.0 2026-03-30
 ### Added
 - Default `$locale` parameter of the `WithFakerHelpers::setUpFaker()` method.

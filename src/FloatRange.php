@@ -1,6 +1,7 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers;
 
+use Deprecated;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\Validator as FloatValidator;
 
 /**
@@ -21,6 +22,15 @@ class FloatRange
      * @var float MIN
      */
     public const float MIN = -PHP_FLOAT_MAX;
+
+    /**
+     * The smallest normal number in floating point.
+     * 
+     * @var float MICRO
+     * @deprecated v4.1.0 Use the `NextFloat` class instead
+     */
+    #[Deprecated("use the NextFloat class instead", "v4.1.0")]
+    public const float MICRO = PHP_FLOAT_MIN;
 
     /**
      * The maximum `float` value that can still have a fractional part. This 
