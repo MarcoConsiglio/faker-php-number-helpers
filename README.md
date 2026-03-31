@@ -137,9 +137,9 @@ Several constants provide the limit for random generation.
 | `nonZeroRandomFloat()` | `-PHP_FLOAT_MAX` | `PHP_FLOAT_MAX` | 0 |
 | `positiveNonZeroRandomFloat()` | `PHP_FLOAT_MIN` | `PHP_FLOAT_MAX` | 0 |
 | `negativeNonZeroRandomFloat()` | `-PHP_FLOAT_MAX` | `-PHP_FLOAT_MIN` | 0 |
-| `randomFraction()` | `-FloatRange::MAX_FRACTION` | `FloatRange::MAX_FRACTION` | integer `float`s |
+| `randomFraction()` | `FloatRange::MIN_FRACTION` | `FloatRange::MAX_FRACTION` | integer `float`s |
 | `positiveRandomFraction()` | `PHP_FLOAT_MIN` | `FloatRange::MAX_FRACTION` | integer `float`s |
-| `negativeRandomFraction()` | `-FloatRange::MAX_FRACTION` | `-PHP_FLOAT_MIN` | integer `float`s |
+| `negativeRandomFraction()` | `FloatRange::MIN_FRACTION` | `-PHP_FLOAT_MIN` | integer `float`s |
 
 # API Documentation
 See more in the API Documentation at `./docs/html/index.html`.
