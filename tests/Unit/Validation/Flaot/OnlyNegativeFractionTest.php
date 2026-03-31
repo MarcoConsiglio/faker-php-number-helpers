@@ -30,7 +30,6 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
         $this->assertSame(NextFloat::beforeZero(), $max);
 
@@ -46,7 +45,6 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
         $this->assertSame(-3.0, $max);
 
@@ -61,7 +59,6 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
         $this->assertSame(NextFloat::beforeZero(), $max);
     }
