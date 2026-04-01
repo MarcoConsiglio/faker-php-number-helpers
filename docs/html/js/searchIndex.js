@@ -721,15 +721,35 @@ Search.appendIndex(
             "summary": "Return\u0020\u0060true\u0060\u0020if\u0020both\u0020\u0060\u0024value_1\u0060\u0020and\u0020\u0060\u0024value_2\u0060\u0020are\u0020positive,\u0020\u0060false\u0060\notherwise.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_areBothPositive"
         },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003AareBothEqual\u0028\u0029",
-            "name": "areBothEqual",
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003Aequal\u0028\u0029",
+            "name": "equal",
             "summary": "Return\u0020\u0060true\u0060\u0020if\u0020both\u0020\u0060\u0024value_1\u0060\u0020and\u0020\u0060\u0024value_2\u0060\u0020are\u0020equal,\u0020\u0060false\u0060\notherwise.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_areBothEqual"
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_equal"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003Adifferent\u0028\u0029",
+            "name": "different",
+            "summary": "Return\u0020\u0060true\u0060\u0020if\u0020\u0060\u0024value_1\u0060\u0020is\u0020different\u0020than\u0020\u0060\u0024value_2\u0060,\u0020\u0060false\u0060\u0020otherwise.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_different"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003AgreaterThanOrEqual\u0028\u0029",
+            "name": "greaterThanOrEqual",
+            "summary": "Return\u0020\u0060true\u0060\u0020if\u0020\u0060\u0024value_1\u0060\u0020is\u0020greater\u0020than\u0020or\u0020equal\u0020to\u0020\u0060\u0024value_2\u0060,\u0020\u0060false\u0060\notherwise.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThanOrEqual"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003AgreaterThan\u0028\u0029",
+            "name": "greaterThan",
+            "summary": "Return\u0020\u0060true\u0060\u0020if\u0020\u0060\u0024value_1\u0060\u0020is\u0020greater\u0020than\u0020\u0060\u0024value_2\u0060,\u0020\u0060false\u0060\u0020otherwise.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThan"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003AlessThanOrEqual\u0028\u0029",
             "name": "lessThanOrEqual",
             "summary": "Return\u0020\u0060true\u0060\u0020if\u0020\u0060\u0024value_1\u0060\u0020is\u0020less\u0020than\u0020or\u0020equal\u0020to\u0020\u0060\u0024value_2\u0060,\n\u0060false\u0060\u0020otherwise.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThanOrEqual"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Validator\u003A\u003AlessThan\u0028\u0029",
+            "name": "lessThan",
+            "summary": "Return\u0020\u0060true\u0060\u0020if\u0020\u0060\u0024value_1\u0060\u0020is\u0020less\u0020than\u0020\u0060\u0024value_2\u0060,\u0020\u0060false\u0060\u0020otherwise.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThan"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\WithFakerHelpers",
             "name": "WithFakerHelpers",

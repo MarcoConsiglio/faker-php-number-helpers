@@ -195,14 +195,6 @@ otherwise.</dd>
 <dd>Validate the range.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_areBothEqual">areBothEqual()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Return `true` if both `$value_1` and `$value_2` are equal, `false`
-otherwise.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Positive.html#method_avoidNegativeFloats">avoidNegativeFloats()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -217,6 +209,36 @@ otherwise.</dd>
 <dd>Avoid infinity and not a number values.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_different">different()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Return `true` if `$value_1` is different than `$value_2`, `false` otherwise.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_equal">equal()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Return `true` if both `$value_1` and `$value_2` are equal, `false`
+otherwise.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThan">greaterThan()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Return `true` if `$value_1` is greater than `$value_2`, `false` otherwise.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThanOrEqual">greaterThanOrEqual()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Return `true` if `$value_1` is greater than or equal to `$value_2`, `false`
+otherwise.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_isPositive">isPositive()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -229,6 +251,13 @@ otherwise.</dd>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Return `true` if `$value` is zero.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThan">lessThan()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Return `true` if `$value_1` is less than `$value_2`, `false` otherwise.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThanOrEqual">lessThanOrEqual()</a>
@@ -551,63 +580,6 @@ otherwise.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_areBothEqual">
-        areBothEqual()
-        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_areBothEqual" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">65</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Return `true` if both `$value_1` and `$value_2` are equal, `false`
-otherwise.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">areBothEqual</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
-                : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
-                : <span class="phpdocumentor-argument-list__argument__type">float</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_avoidNegativeFloats">
         avoidNegativeFloats()
         <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Positive.html#method_avoidNegativeFloats" class="headerlink"><i class="fas fa-link"></i></a>
@@ -705,6 +677,232 @@ otherwise.</p>
         
     
     
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_different">
+        different()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_different" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">73</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return `true` if `$value_1` is different than `$value_2`, `false` otherwise.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">different</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_equal">
+        equal()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_equal" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">65</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return `true` if both `$value_1` and `$value_2` are equal, `false`
+otherwise.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">equal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_greaterThan">
+        greaterThan()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThan" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">90</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return `true` if `$value_1` is greater than `$value_2`, `false` otherwise.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">greaterThan</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_greaterThanOrEqual">
+        greaterThanOrEqual()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThanOrEqual" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return `true` if `$value_1` is greater than or equal to `$value_2`, `false`
+otherwise.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">greaterThanOrEqual</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -810,6 +1008,62 @@ otherwise.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_lessThan">
+        lessThan()
+        <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThan" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return `true` if `$value_1` is less than `$value_2`, `false` otherwise.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">lessThan</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int|float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value_2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value_2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_lessThanOrEqual">
         lessThanOrEqual()
         <a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThanOrEqual" class="headerlink"><i class="fas fa-link"></i></a>
@@ -818,7 +1072,7 @@ otherwise.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Validation/Validator.php"><a href="files/src-validation-validator.html"><abbr title="src/Validation/Validator.php">Validator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -1173,11 +1427,15 @@ otherwise.</p>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_hasNoFraction">hasNoFraction()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_isNegative">isNegative()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-OnlyPositive.html#method_validate">validate()</a></li>
-                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_areBothEqual">areBothEqual()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Positive.html#method_avoidNegativeFloats">avoidNegativeFloats()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Positive.html#method_avoidNotAllowedFloats">avoidNotAllowedFloats()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_different">different()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_equal">equal()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThan">greaterThan()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_greaterThanOrEqual">greaterThanOrEqual()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_isPositive">isPositive()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_isZero">isZero()</a></li>
+                                            <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThan">lessThan()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Validator.html#method_lessThanOrEqual">lessThanOrEqual()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Validator.html#method_notAllowedFloat">notAllowedFloat()</a></li>
                                             <li class=""><a href="classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Float-Positive.html#method_setStandardMax">setStandardMax()</a></li>
