@@ -15,7 +15,7 @@ class RelativeFractions extends Relative
     public function validate(float &$min, float &$max): void
     {
         $this->avoidNotAllowedFloats($min, $max);
-        if ($this->areBothEqual($min, $max)) {
+        if ($this->equal($min, $max)) {
             $this->setStandardMin($min);
             $this->setStandardMax($max);
         }
