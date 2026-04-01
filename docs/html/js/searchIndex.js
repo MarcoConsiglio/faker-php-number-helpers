@@ -613,7 +613,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyNegative",
             "name": "OnlyNegative",
-            "summary": "The\u0020negative\u0020\u0060float\u0060\u0020validator.",
+            "summary": "The\u0020negative\u0020\u0060int\u0060\u0020validator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Integer-OnlyNegative.html"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyNegative\u003A\u003Avalidate\u0028\u0029",
@@ -623,7 +623,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyPositive",
             "name": "OnlyPositive",
-            "summary": "The\u0020positive\u0020\u0060float\u0060\u0020validator.",
+            "summary": "The\u0020positive\u0020\u0060int\u0060\u0020validator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Integer-OnlyPositive.html"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyPositive\u003A\u003Avalidate\u0028\u0029",
@@ -633,7 +633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyPositiveExceptZero",
             "name": "OnlyPositiveExceptZero",
-            "summary": "The\u0020positive\u0020non\u002Dnull\u0020\u0060float\u0060\u0020validator.",
+            "summary": "The\u0020positive\u0020non\u002Dnull\u0020\u0060int\u0060\u0020validator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Integer-OnlyPositiveExceptZero.html"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\OnlyPositiveExceptZero\u003A\u003Avalidate\u0028\u0029",
@@ -643,7 +643,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\Relative",
             "name": "Relative",
-            "summary": "The\u0020relative\u0020\u0060float\u0060\u0020validator.",
+            "summary": "The\u0020relative\u0020\u0060int\u0060\u0020validator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Integer-Relative.html"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\Relative\u003A\u003Avalidate\u0028\u0029",
@@ -653,7 +653,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\RelativeExceptZero",
             "name": "RelativeExceptZero",
-            "summary": "The\u0020relative\u0020non\u002Dnull\u0020\u0060float\u0060\u0020validator.",
+            "summary": "The\u0020relative\u0020non\u002Dnull\u0020\u0060int\u0060\u0020validator.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Validation-Integer-RelativeExceptZero.html"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Validation\\Integer\\RelativeExceptZero\u003A\u003Avalidate\u0028\u0029",

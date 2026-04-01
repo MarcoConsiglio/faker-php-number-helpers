@@ -2,7 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
 /**
- * The relative non-null `float` validator.
+ * The relative non-null `int` validator.
  */
 class RelativeExceptZero extends Validator
 {

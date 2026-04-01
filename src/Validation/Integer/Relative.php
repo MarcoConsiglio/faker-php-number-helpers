@@ -1,10 +1,9 @@
 <?php
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 
-use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 
 /**
- * The relative `float` validator.
+ * The relative `int` validator.
  */
 class Relative extends Validator
 {
