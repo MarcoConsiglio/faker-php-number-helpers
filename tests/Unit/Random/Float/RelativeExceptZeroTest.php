@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Random\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeExceptZero;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Positive;
@@ -40,6 +41,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(OnlyPositiveExceptZero::class)]
 #[UsesClass(RelativeValidator::class)]
 #[UsesClass(RelativeExceptZeroValidator::class)]
+#[UsesClass(NextFloat::class)]
 class RelativeExceptZeroTest extends GeneratorTest
 {
     #[TestDox("generates a relative float except zero.")]
@@ -53,7 +55,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         $generator = new RelativeExceptZero(
             $this->faker,
             new RelativeExceptZeroValidator,
-            new FloatRange(FloatRange::MICRO, FloatRange::MAX)
+            new FloatRange(NextFloat::afterZero(), FloatRange::MAX)
         );
 
         // Act
@@ -71,7 +73,7 @@ class RelativeExceptZeroTest extends GeneratorTest
         $generator = new RelativeExceptZero(
             $this->faker,
             new RelativeExceptZeroValidator,
-            new FloatRange(FloatRange::MIN, -FloatRange::MICRO)
+            new FloatRange(FloatRange::MIN, NextFloat::beforeZero())
         );
 
         // Act

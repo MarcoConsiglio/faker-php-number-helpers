@@ -172,7 +172,7 @@ trait WithFakerHelpers
     protected static function randomFraction(
         float $min = -FloatRange::MAX_FRACTION, 
         float $max = FloatRange::MAX_FRACTION, 
-        $precision = PHP_FLOAT_DIG
+        int $precision = PHP_FLOAT_DIG
     ): float {
         return new RelativeFraction(
             self::$faker,
@@ -187,7 +187,7 @@ trait WithFakerHelpers
     protected static function positiveRandomFraction(
         float $min = 0, 
         float $max = FloatRange::MAX_FRACTION, 
-        $precision = PHP_FLOAT_DIG
+        int $precision = PHP_FLOAT_DIG
     ): float {
         return new PositiveFraction(
             self::$faker,
@@ -202,7 +202,7 @@ trait WithFakerHelpers
     protected static function negativeRandomFraction(
         float $min = -FloatRange::MAX_FRACTION, 
         float $max = 0, 
-        $precision = PHP_FLOAT_DIG
+        int $precision = PHP_FLOAT_DIG
     ): float {
         return new NegativeFraction(
             self::$faker,
@@ -217,7 +217,7 @@ trait WithFakerHelpers
     protected static function positiveNonZeroRandomFloat(
         float $min = 0, 
         float $max = FloatRange::MAX, 
-        $precision = PHP_FLOAT_DIG): float
+        int $precision = PHP_FLOAT_DIG): float
     {
         return new PositiveExceptZero(
             self::$faker,
@@ -232,7 +232,7 @@ trait WithFakerHelpers
     protected static function negativeNonZeroRandomFloat(
         float $min = FloatRange::MIN, 
         float $max = 0, 
-        $precision = PHP_FLOAT_DIG
+        int $precision = PHP_FLOAT_DIG
     ): float {
         return new NegativeExceptZero(
             self::$faker,
@@ -247,7 +247,7 @@ trait WithFakerHelpers
     protected static function nonZeroRandomFloat(
         float $min = FloatRange::MIN, 
         float $max = FloatRange::MAX, 
-        $precision = PHP_FLOAT_DIG
+        int $precision = PHP_FLOAT_DIG
     ): float {
         return new RelativeExceptZero(
             self::$faker,

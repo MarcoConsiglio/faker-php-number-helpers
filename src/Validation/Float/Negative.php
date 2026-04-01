@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 
 /**
  * A negative `float` range validator.
@@ -39,6 +40,6 @@ abstract class Negative extends Validator
      */
     protected function setStandardMax(float &$max): void
     {
-        $max = -FloatRange::MICRO;
+        $max = NextFloat::beforeZero();
     }
 }

@@ -86,6 +86,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-IntRange.html#property_end"
         },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\NextFloat",
+            "name": "NextFloat",
+            "summary": "Calculate\u0020the\u0020adjacent\u0020\u0060float\u0060\u0020value.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-NextFloat.html"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\NextFloat\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Return\u0020the\u0020adjacent\u0020\u0060float\u0060\u0020number\u0020after\u0020\u0060\u0024value\u0060.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-NextFloat.html#method_after"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\NextFloat\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Return\u0020the\u0020adjacent\u0020\u0060float\u0060\u0020number\u0020before\u0020\u0060\u0024value\u0060.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-NextFloat.html#method_before"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\NextFloat\u003A\u003AafterZero\u0028\u0029",
+            "name": "afterZero",
+            "summary": "Return\u0020the\u0020adjacent\u0020\u0060float\u0060\u0020number\u0020after\u0020zero.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-NextFloat.html#method_afterZero"
+        },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\NextFloat\u003A\u003AbeforeZero\u0028\u0029",
+            "name": "beforeZero",
+            "summary": "Return\u0020the\u0020adjacent\u0020\u0060float\u0060\u0020number\u0020before\u0020zero.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-NextFloat.html#method_beforeZero"
+        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Float\\Generator",
             "name": "Generator",
             "summary": "A\u0020random\u0020\u0060float\u0060\u0020number\u0020generator.",

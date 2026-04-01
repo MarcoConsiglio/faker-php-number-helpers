@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use Override;
 
 /**
@@ -35,6 +36,6 @@ class OnlyPositiveExceptZero extends Positive
     #[Override]
     protected function setStandardMin(float &$min): void
     {
-        $min = FloatRange::MICRO;
+        $min = NextFloat::afterZero();
     }
 }

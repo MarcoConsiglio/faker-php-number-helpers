@@ -2,13 +2,16 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Validation\Flaot;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[TestDox("The OnlyNegativeFractions validator")]
 #[CoversClass(OnlyNegativeFractions::class)]
+#[UsesClass(NextFloat::class)]
 class OnlyNegativeFractionTest extends BaseTestCase
 {
     #[TestDox("allows only negative floats with fractional part.")]
@@ -27,9 +30,8 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
 
         /**
          * $min = -INF
@@ -43,7 +45,6 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
         $this->assertSame(-3.0, $max);
 
@@ -58,8 +59,7 @@ class OnlyNegativeFractionTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->isFloat($min, $max);
         $this->assertSame(FloatRange::MIN_FRACTION, $min);
-        $this->assertSame(-FloatRange::MICRO, $max);
+        $this->assertSame(NextFloat::beforeZero(), $max);
     }
 }

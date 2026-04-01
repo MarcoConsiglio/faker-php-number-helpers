@@ -3,6 +3,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Feature;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Generator as FloatGenerator;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\Negative as NegativeFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Random\Float\NegativeExceptZero as NegativeFloatExceptZero;
@@ -78,6 +79,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[UsesClass(OnlyPositiveFractionsValidator::class)]
 #[UsesClass(OnlyNegativeFractionsValidator::class)]
 #[UsesClass(RelativeFractionsValidator::class)]
+#[UsesClass(NextFloat::class)]
 class WithFakerHelpersTest extends BaseTestCase
 {
     use WithFakerHelpers;

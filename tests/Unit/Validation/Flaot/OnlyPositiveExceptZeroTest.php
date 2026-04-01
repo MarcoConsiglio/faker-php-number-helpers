@@ -2,13 +2,16 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Tests\Unit\Validation\Flaot;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Tests\BaseTestCase;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveExceptZero;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[TestDox("The OnlyPositiveExceptZero float validator")]
 #[CoversClass(OnlyPositiveExceptZero::class)]
+#[UsesClass(NextFloat::class)]
 class OnlyPositiveExceptZeroTest extends BaseTestCase
 {
     #[TestDox("allows only positive floats except zero.")]
@@ -27,7 +30,7 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(FloatRange::MAX, $max);
 
         /**
@@ -42,7 +45,7 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(7.4, $max);
 
         /**
@@ -72,7 +75,7 @@ class OnlyPositiveExceptZeroTest extends BaseTestCase
         $validator->validate($min, $max);
 
         // Assert
-        $this->assertSame(FloatRange::MICRO, $min);
+        $this->assertSame(NextFloat::afterZero(), $min);
         $this->assertSame(FloatRange::MAX, $max);
     }
 }

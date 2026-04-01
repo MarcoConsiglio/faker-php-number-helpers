@@ -2,6 +2,7 @@
 namespace MarcoConsiglio\FakerPhpNumberHelpers\Random\Float;
 
 use MarcoConsiglio\FakerPhpNumberHelpers\FloatRange;
+use MarcoConsiglio\FakerPhpNumberHelpers\NextFloat;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyNegativeFractions;
 use MarcoConsiglio\FakerPhpNumberHelpers\Validation\Float\OnlyPositiveFractions;
 
@@ -32,13 +33,13 @@ class RelativeFraction extends Generator
             return new PositiveFraction(
                 $this->generator,
                 new OnlyPositiveFractions, 
-                new FloatRange(FloatRange::MICRO, $this->range->end)
+                new FloatRange(NextFloat::afterZero(), $this->range->end)
             )->generate($precision);
         else
             return new NegativeFraction(
                 $this->generator,
                 new OnlyNegativeFractions,
-                new FloatRange($this->range->start, -FloatRange::MICRO)
+                new FloatRange($this->range->start, NextFloat::beforeZero())
             )->generate($precision);
     }
 
