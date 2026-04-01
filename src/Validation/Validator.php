@@ -62,9 +62,34 @@ abstract class Validator
      * Return `true` if both `$value_1` and `$value_2` are equal, `false` 
      * otherwise.
      */
-    protected function areBothEqual(float $value_1, float $value_2): bool
+    protected function equal(int|float $value_1, int|float $value_2): bool
     {
-        return $value_1 === $value_2;     
+        return $value_1 == $value_2;     
+    }
+
+    /**
+     * Return `true` if `$value_1` is different than `$value_2`, `false` otherwise.
+     */
+    protected function different(int|float $value_1, int|float $value_2): bool
+    {
+        return $value_1 != $value_2;
+    }
+
+    /**
+     * Return `true` if `$value_1` is greater than or equal to `$value_2`, `false` 
+     * otherwise.
+     */
+    protected function greaterThanOrEqual(int|float $value_1, int|float $value_2): bool
+    {
+        return $value_1 >= $value_2;
+    }
+
+    /**
+     * Return `true` if `$value_1` is greater than `$value_2`, `false` otherwise.
+     */
+    protected function greaterThan(int|float $value_1, int|float $value_2): bool
+    {
+        return $value_1 > $value_2;
     }
 
     /**
@@ -74,5 +99,13 @@ abstract class Validator
     protected function lessThanOrEqual(int|float $value_1, int|float $value_2): bool
     {
         return $value_1 <= $value_2;
+    }
+
+    /**
+     * Return `true` if `$value_1` is less than `$value_2`, `false` otherwise.
+     */
+    protected function lessThan(int|float $value_1, int|float $value_2): bool
+    {
+        return $value_1 < $value_2;
     }
 }

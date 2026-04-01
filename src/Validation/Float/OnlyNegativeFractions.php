@@ -16,7 +16,7 @@ class OnlyNegativeFractions extends Negative
     {
         $this->avoidNotAllowedFloats($min, $max);
         $this->avoidPositiveFloats($min, $max);
-        if ($this->areBothEqual($min, $max)) {
+        if ($this->equal($min, $max)) {
             $this->setStandardMin($min);
             $this->setStandardMax($max);
         }
