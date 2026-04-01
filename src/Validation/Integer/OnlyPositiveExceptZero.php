@@ -4,7 +4,7 @@ namespace MarcoConsiglio\FakerPhpNumberHelpers\Validation\Integer;
 use MarcoConsiglio\FakerPhpNumberHelpers\IntRange;
 
 /**
- * The positive non-null `float` validator.
+ * The positive non-null `int` validator.
  */
 class OnlyPositiveExceptZero extends Validator
 {

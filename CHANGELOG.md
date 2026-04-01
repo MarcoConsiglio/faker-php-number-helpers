@@ -1,4 +1,8 @@
 # Changelog
+## v4.1.1 2026-04-01
+### Changed
+- API documentation.
+
 ## v4.1.0 2026-03-31
 ### Added
 - `NextFloat` class to calculate the previous/next representable `float` number near another `float` number.
