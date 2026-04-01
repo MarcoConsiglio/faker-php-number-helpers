@@ -4,6 +4,8 @@
 - `NextFloat` class to calculate the previous/next representable `float` number near another `float` number.
 ### Deprecated
 - `FloatRange::MICRO` constant.
+### Changed
+- API and README documentation.
 
 ## v4.0.0 2026-03-30
 ### Added
