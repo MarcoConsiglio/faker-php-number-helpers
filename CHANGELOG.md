@@ -1,4 +1,17 @@
 # Changelog
+## v4.2.0 2026-04-01
+### Added
+- `Validator::{`  
+&ensp;&ensp;&ensp;&ensp;`different`,  
+&ensp;&ensp;&ensp;&ensp;`greaterThanOrEqual`,  
+&ensp;&ensp;&ensp;&ensp;`greaterThan`,  
+&ensp;&ensp;&ensp;&ensp;`lessThan`,  
+`}` methods
+### Changed
+- All `Validator` abstract class visibility methods to `public`.
+- `Validator::areBothEqual()` method name to `equal()`.
+- API documentation.
+
 ## v4.1.1 2026-04-01
 ### Changed
 - API documentation.
