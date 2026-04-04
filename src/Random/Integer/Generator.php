@@ -26,9 +26,4 @@ abstract class Generator extends RandomGenerator
      * Generate a random `int` number.
      */
     abstract public function generate(): int;
-
-    /**
-     * Validate the random range.
-     */
-    abstract protected function validate(): void;
 }
