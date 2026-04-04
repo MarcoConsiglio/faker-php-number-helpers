@@ -13,4 +13,9 @@ abstract class Generator
         protected FakerGenerator $generator, 
         protected Validator $validator
     ) {}
+
+    /**
+     * Validate the random range.
+     */
+    abstract protected function validate(): void;
 }

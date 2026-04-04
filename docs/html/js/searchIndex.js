@@ -126,11 +126,6 @@ Search.appendIndex(
             "summary": "Generate\u0020a\u0020\u0060float\u0060\u0020number\u0020with\u0020\u0060\u0024precision\u0060\u0020decimal\u0020places.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Float-Generator.html#method_generate"
         },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Float\\Generator\u003A\u003Avalidate\u0028\u0029",
-            "name": "validate",
-            "summary": "Validate\u0020the\u0020random\u0020range.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Float-Generator.html#method_validate"
-        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Float\\Generator\u003A\u003AnormalizePrecision\u0028\u0029",
             "name": "normalizePrecision",
             "summary": "Limit\u0020the\u0020\u0060\u0024precision\u0060\u0020between\u0020\u00600\u0060\u0020and\u0020\u0060PHP_FLOAT_DIG\u0060.",
@@ -286,6 +281,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Generator.html#method___construct"
         },                {
+            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Generator\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "Validate\u0020the\u0020random\u0020range.",
+            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Generator.html#method_validate"
+        },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Generator\u003A\u003A\u0024generator",
             "name": "generator",
             "summary": "",
@@ -310,11 +310,6 @@ Search.appendIndex(
             "name": "generate",
             "summary": "Generate\u0020a\u0020random\u0020\u0060int\u0060\u0020number.",
             "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Integer-Generator.html#method_generate"
-        },                {
-            "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Integer\\Generator\u003A\u003Avalidate\u0028\u0029",
-            "name": "validate",
-            "summary": "Validate\u0020the\u0020random\u0020range.",
-            "url": "classes/MarcoConsiglio-FakerPhpNumberHelpers-Random-Integer-Generator.html#method_validate"
         },                {
             "fqsen": "\\MarcoConsiglio\\FakerPhpNumberHelpers\\Random\\Integer\\Generator\u003A\u003A\u0024range",
             "name": "range",

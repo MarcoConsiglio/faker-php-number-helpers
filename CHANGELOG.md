@@ -1,4 +1,9 @@
 # Changelog
+## v4.2.1 2026-04-04
+### Changed
+- Minor code edits.
+- Rector configuration.
+
 ## v4.2.0 2026-04-01
 ### Added
 - `Validator::{`  

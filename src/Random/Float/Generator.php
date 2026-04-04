@@ -28,11 +28,6 @@ abstract class Generator extends RandomGenerator
     abstract public function generate(int $precision): float;
 
     /**
-     * Validate the random range.
-     */
-    abstract protected function validate(): void;
-
-    /**
      * Limit the `$precision` between `0` and `PHP_FLOAT_DIG`.
      */
     protected function normalizePrecision(int $precision): int
